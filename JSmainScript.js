@@ -81,6 +81,17 @@ $(document).keydown(function(e){
   }
 
   
+    if ((e.metaKey || e.ctrlKey) && (e.metaKey || e.shiftKey) && ( String.fromCharCode(e.which).toLowerCase() === 'l') ) {
+     if (lunchMode == 'off') {
+       lunchMode = 'on';
+     } else {
+       if (lunchMode == 'on') {
+         lunchMode = 'off';
+       }
+     }
+   }
+  
+  
     if ((e.metaKey || e.ctrlKey) && ( String.fromCharCode(e.which).toLowerCase() === 'x') ) {
       if (developerMode = 'off'){
       developerMode = 'on';
