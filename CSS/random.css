@@ -1,3 +1,13 @@
+canvas {
+  display: block;
+  position: absolute;
+  zindex: 1;
+  pointer-events: none;
+  width: 200vw;
+  height: 100vh;
+}
+
+
 #Progress_Status { 
   width: 50%; 
   background-color: #40444F; 
