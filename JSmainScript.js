@@ -28,6 +28,12 @@ refreshAt(1,0,0);
 
 //STAY AT TOP
 
+
+function middleTimer() {
+  window.location.href = 'https://middleschooltimer.glitch.me';
+}
+
+
 var rotation = 0;
 var scale = 1;
 var transformY = 0;
@@ -247,6 +253,24 @@ $(document).keydown(function(e){
   }
 });
 
+function getInvis() {
+    var access = prompt("PLEASE ENTER ACCESS CODE");
+    if (access == "do a barrel roll" || access == "do a barrel roll") {alert("ok"); invis(); } else {alert("no")}
+}
+
+  var i = 0;
+
+function invis() {
+    setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+      rotate = rotate + 10;
+        updateTransform();        //  your code here
+      i++;                     //  increment the counter
+      if (i < 99999999999) {            //  if the counter < 10, call the loop function
+         invis();          //  ..  again which will trigger another 
+      }                        //  ..  setTimeout()
+   }, 50)
+}
+
 function updateScale(){
   document.body.style.transform = 'scale(' + scale + ')';
 }
@@ -370,7 +394,7 @@ var x = setInterval(function() {
 }, 0);
 
 function stuff() {
-   var win = window.open("http://schooltimer.glitch.me/stuff.html", '_blank');
+   var win = window.open("https://schooltimer.glitch.me/stuff.html", '_blank');
    win.focus();
 }
 
@@ -1159,6 +1183,7 @@ function setElementsAsValues () {
          // document.getElementById("video").style.backgroundColor = accent;
          // document.getElementById("myBtn").style.backgroundColor = accent;
           document.getElementById("feature").style.backgroundColor = settingDpres;
+   document.getElementById("middleTimer").style.backgroundColor = settingDpres;
           document.getElementById("title").style.color = accent;
           document.getElementById("myprogressBar").style.backgroundColor = accent;
   
@@ -1207,6 +1232,7 @@ function setElementsAsValues () {
   
     document.getElementById("feature").style.backgroundColor = settingDpres;
   document.getElementById("feature").style.color = settingDTxtpres;
+         document.getElementById("middleTimer").style.color = settingDTxtpres;
   
           document.getElementById("myBtn").style.backgroundColor = settingDpres;
           document.getElementById("myBtn").style.color = settingDTxtpres;
@@ -1423,6 +1449,7 @@ var radioColor = 'white';
                   // document.getElementById("video").style.color = hex1;
                    document.getElementById("myBtn").style.color = hex1;
                    document.getElementById("feature").style.color = hex1;
+                        document.getElementById("middleTimer").style.color = hex1;
                  
                    localStorage.setItem("customButtonTextColor", hex1);
                } else {
@@ -1431,6 +1458,7 @@ var radioColor = 'white';
                     localStorage.setItem("customSettingDisabledColor", hex1);
                    
                      document.getElementById("feature").style.backgroundColor = hex1;
+                    document.getElementById("middleTimer").style.backgroundColor = hex1;
                    document.getElementById("myBtn").style.backgroundColor = hex1;
                     document.getElementById("Progress_Status").style.backgroundColor = hex1;//asdfasdfasdf
                    
@@ -1473,6 +1501,7 @@ var radioColor = 'white';
                     
                          document.getElementById("myBtn").style.color = hex1;
                           document.getElementById("feature").style.color = hex1;
+                         document.getElementById("middleTimer").style.color = hex1;
                          buttonTxtColorChange();
                          
                        }
