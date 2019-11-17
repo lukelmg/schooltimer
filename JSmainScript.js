@@ -1,3 +1,5 @@
+//https://glitch.com/edit/#!/join/5864357c-6e57-4d7b-9dd2-bed20992841e
+
 //STAY AT TOP
 
 function schooltimer() {
