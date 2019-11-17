@@ -1,5 +1,6 @@
 body {
   margin: 0 0 0 0;
+  height: 100%;
 }
 
 #values {
@@ -11,55 +12,53 @@ body {
   font-weight: bold;
   margin-bottom: 5px;
   margin-top: 20px;
+  font-size: 1.3em;
 }
 
 #custom {
   font-weight: bold;
   margin-top: 0px;
+  font-size: 1.3em;
 }
 
 #colorOptions {
   margin-top: 10px;
-  border: none;
-  outline: none;
   background-color: 4a4d5c;
   color: white;
   width: 80%;
   height: 30px;
   font-size: 0.8em;
   font-weight: bold;
-  moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.1s ease-in-out;
-  border-radius: 5px;
+  border: none;
 }
 
 #colorOptions:hover {
-  transform: scale(1.1);
+  background-color: 6c7187;
 }
 
 #colorOptions:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+#colorOptions:enabled {
   outline: 0;
 }
 
 #presets {
-  border: none;
-  outline: none;
+  margin-top: 10px;
   background-color: 4a4d5c;
   color: white;
   width: 80%;
   height: 30px;
   font-size: 0.8em;
   font-weight: bold;
-  moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.1s ease-in-out;
-  border-radius: 5px;
+  border: none;
 }
 #presets:hover {
-  transform: scale(1.1);
+  background-color: 6c7187;
 }
 
 #presets:focus {
@@ -68,18 +67,19 @@ body {
 
 #schoolScheduleTxt {
   color: white;
-  font-weight: bold;
-  font-family: 'Ramabhadra', sans-serif;
+
+
   font-size: 4vh;
   margin: 5px 3px;
-  margin-bottom: -10;
-  margin-top:0;
+  margin-bottom: -5;
+  margin-top: 2vh;
+
 }
 
 #tabTxt {
   color: white;
   font-weight: bold;
-  font-family: 'Ramabhadra', sans-serif;
+  margin-top: 50px;
   font-size: 4vh;
   margin-top: 0px;
   margin-bottom: 5px;
@@ -89,7 +89,7 @@ body {
 #lunchTxt {
   color: white;
   font-weight: bold;
-  font-family: 'Ramabhadra', sans-serif;
+  font-family: "Ramabhadra", sans-serif;
   font-size: 16px;
   margin-top: 25px;
   margin-bottom: 0px;
@@ -97,7 +97,7 @@ body {
 
 #dayContainer,
 #dayContainerKey {
-  background-color: #212121;
+  background-color: #191B1F;
   height: 100%;
   padding: 5px 20px;
   margin: 0px 0px 0px 0px;
@@ -105,10 +105,14 @@ body {
   -webkit-box-shadow: 0 0 10px 2px black;
   -moz-box-shadow: 0 0 10px 2px black;
   box-shadow: 0 0 10px 2px black;
+  marign-left:0px;
+  display:block;
+  z-index: 10000;
+  position: relative;
 }
 
 #yearContainer {
-  background-color: #212121;
+  background-color: #191B1F;
   display: inline-block;
   margin-top: 0px;
   padding: 0px 0px 0px 0px;
@@ -120,20 +124,20 @@ body {
   display: inline-block;
   position: static;
   margin-top: 1vh;
-  position:relative;
-  top:0vh;
+  position: relative;
+  top: 0vh;
 }
 
 #daySelectTxt2,
-#daySelectTxt3{
+#daySelectTxt3 {
   color: white;
   font-size: 3vh;
   font-family: "Ramabhadra", sans-serif;
   display: inline-block;
-  margin-top:-150px;
-  padding-top:50px;
-  position:relative;
-  top:0vh;
+  margin-top: -150px;
+  padding-top: 50px;
+  position: relative;
+  top: 0vh;
 }
 
 #daySelectTxt4 {
@@ -141,9 +145,9 @@ body {
   font-size: 3vh;
   font-family: "Ramabhadra", sans-serif;
   display: inline-block;
-  margin-top:-150px;
-  padding-top:50px;
-  margin-bottom:0px;
-    position:relative;
-  top:0vh;
+  margin-top: -150px;
+  padding-top: 50px;
+  margin-bottom: 20px;
+  position: relative;
+  top: 0vh;
 }

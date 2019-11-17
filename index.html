@@ -16,7 +16,6 @@
   });
 }
 </script>
-    
     <title>School Timer</title>
     <meta name="description" content="This is a Timer for School meant for students to be able to know when each class ends. ">
     <meta name="keywords" content="Timer,School,School Timer,Timer School,Timer for School,School Schedule,Timer Schedule,Stopwatch,Stopwatch School,schooltimer,schooltimers,stopwatch for school,school stopwatch,schedule, school schedule">
@@ -27,7 +26,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140137723-1"></script>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kanit|Rajdhani|Ramabhadra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo:100&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="CSS/advancedStats.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/slider.css">
     <link rel="stylesheet" href="CSS/tooltip.css">
@@ -41,20 +43,28 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
    
   </head>
-  <!-- <audio id="click1" src="https://cdn.glitch.com/b41ac94d-c334-488c-802a-1b6b7a8c75e8%2FChicken-Clucking-Short-www.fesliyanstudios.com%20(1).mp3?v=1571405231239"></audio>
+  
+  
+    <audio id="click1" src="https://cdn.glitch.com/b41ac94d-c334-488c-802a-1b6b7a8c75e8%2FChicken-Clucking-Short-www.fesliyanstudios.com%20(1).mp3?v=1571405231239"></audio>
   <audio id="click2" src="https://cdn.glitch.com/b41ac94d-c334-488c-802a-1b6b7a8c75e8%2FChicken-Clucking-Short-www.fesliyanstudios.com%20(1).mp3?v=1571405231239"></audio>
--->
-   <audio id="click1" src="https://cdn.glitch.com/61df65a3-20ed-4ff0-abd8-cc39d4829321%2Fclick%203%20edited.wav?v=1569539649834"></audio>
-     <audio id="click2" src="https://cdn.glitch.com/61df65a3-20ed-4ff0-abd8-cc39d4829321%2Fclick%203%20edited.wav?v=1569539649834"></audio>
-  <body onload="rememberPreset(); schooltimer(); unload(); mobile(); onloadtest(); checkToggle();" scroll="no" style="overflow: hidden">
-     <canvas id="confetti" style="width:90vw;height:90vh;"></canvas>
+   <!--<audio id="click1" src="https://cdn.glitch.com/61df65a3-20ed-4ff0-abd8-cc39d4829321%2Fclick%203%20edited.wav?v=1569539649834"></audio>
+     <audio id="click2" src="https://cdn.glitch.com/61df65a3-20ed-4ff0-abd8-cc39d4829321%2Fclick%203%20edited.wav?v=1569539649834"></audio> -->
+  
+  
+  <body onload="rememberPreset(); schooltimer(); mobile(); onloadtest(); checkToggle(); hasLoadBefore();" scroll="no" style="overflow: hidden">
+    <canvas id="confetti" style="width:90vw;height:90vh;"></canvas>
     <div id="loadingScreen">
     
       <div id="spinnerContainer">
-      <img src="https://cdn.glitch.com/b41ac94d-c334-488c-802a-1b6b7a8c75e8%2FRolling-1s-200px.gif?v=1568564175361" alt="loadthing" id="spinner" width="80" height="80">
-      <h1 id="schoolTimer">School Timer</h1>
+     
+      <h1 id="schoolTimer">School Timer</h1><img src="https://cdn.glitch.com/b41ac94d-c334-488c-802a-1b6b7a8c75e8%2FRolling-1s-200px.gif?v=1568564175361" alt="loadthing" id="spinner" width="80" height="80">
     </div>
      <p id="loadCopy">Made by Luke Gutman, 2019 &nbsp &nbsp &nbsp</p>
+<center><div id="customSurvey">
+     <button id="continueButton" onclick="loadSurvey();">
+       Please Complete this One Time Survey to Continue
+  </button>
+  </div></center>
     
     </div>
     <center>
@@ -77,9 +87,9 @@
         </center>
       </div>
       <div id="mydiv">
-        <button id="closeButton" class="closeButton" onclick="moveColor()">&times</button>
         <div id="mydivheader">
-          <h2>Color Picker</h2>
+          <button id="closeButton" class="closeButton" onclick="moveColor()">&times</button>
+          <center><h2 id="colorPickerTextHeader">Color Picker</h2></center>
         </div>
         <br>
              <p id="custom">
@@ -132,7 +142,7 @@
          <br>
             <div class="tooltip">  <span class="tooltiptext">2 Hour Delay</span>  <p id="daySelectTxt4">D</p><button type="button" id="buttonD" class="checkButton buttonD" onclick="Dpressed();"><center><div id="Ddiv">&nbsp</div></center></button> </div>
           <br>
-          <p id="tabTxt">Settings</p>
+          <p id="tabTxt"></p>
           <div class="tooltip">
             <span class="tooltiptext">Changes Tab Title to end of day from closest period</span>
             <button class="tabTitleButton" type="button" id="tabTitleButton" onclick="tabSwitch();">
@@ -153,10 +163,15 @@
             <input type="button" class="colorPicker" value="Color Picker" id="myBtn" onclick="moveColor();">
             </div>
             <br>
+            <div class="tooltip">
+            <span class="tooltiptext">More Advanced and Specific</span>
+             <button onclick="moreStatsOut()" type="button" id="middleTimer" class="colorPicker"><center>More Stats</center></button>
+            </div>
+            <br>
           <div id="yearContainer">
             <p id="getDate">0</p>
           </div> <br>
-          <p id="endYearTxt" onclick="confet();">Weeks Until<br>Summer Break</p>
+          <p id="endYearTxt" onclick="confet();">Weeks Until<br><br>Summer Break</p>
           </center>
         </div>
         
@@ -170,9 +185,39 @@
         </div>
       </center>
     </div>
+      <div id="advancedStats">
+        <div class="stat">
+              <p class="likeText">Weekend Starts In </p><p class="timeValueAdvanced" id="untilWeekend"></p>
+        </div>
+           <div class="stat">
+              <p class="likeText">2nd Quarter End</p><p class="timeValueAdvanced" id="until2Quarter">10d 10h 5m 10s</p>
+        </div>
+           <div class="stat">
+              <p class="likeText">3rd Quarter End</p><p class="timeValueAdvanced" id="until3Quarter">10d 10h 5m 10s</p>
+        </div>
+           <div class="stat">
+              <p class="likeText">4th Quarter End </p><p class="timeValueAdvanced" id="until4Quarter">10d 10h 5m 10s</p>
+        </div>
+        
+         <div class="stat">
+              <p class="likeText">Senior's Last Day</p><p class="timeValueAdvanced" id="seniorEnd">10d 10h 5m 10s</p>
+        </div>
+        
+        
+        <div class="stat">
+              <p class="likeText">End of School Year </p><p class="timeValueAdvanced" id="schoolEnd">10d 10h 5m 10s</p>
+        </div>
+        
+        <div class="stat">
+              <p class="likeText">Thanksgiving Break</p><p class="timeValueAdvanced" id="untilThanks">10d 10h 5m 10s</p>
+        </div>
+        
+          <div class="stat">
+              <p class="likeText">Winter Break</p><p class="timeValueAdvanced" id="winterBreak">10d 10h 5m 10s</p>
+        </div>
+    </div>
     <div id="like">
     </div>
-     <div id="invis" onclick="getInvis();"></div>
   </form>
   <span id="result"></span>
   <p id="firstEndText"><b>Period 1 Ends In:&nbsp</b></p>
@@ -202,11 +247,11 @@
   <p id="endText"><b>End of School In: &nbsp &nbsp</b></p>
   <p id="time"></p>
   <br>
-    <p onclick="notes();" id="versionNumber">Version 7.3 </p><p id="copy">&vert; Made by </p><p id="myName">Luke Gutman &nbsp</p>
+    <p onclick="notes();" id="versionNumber">Version 7.4 </p>
+    <p id="copy">Made by </p>
+    <p id="myName">Luke Gutman 2019 &nbsp</p>
         <button onclick="stuff();" id="feature" class="feature"><center>&#9432; More Info</center></button>
-       <button onclick="middleTimer();" id="middleTimer" class="feature"><center>Middle School Timer</center></button>
   <p id="title"></p>
-
   <center>
     <div id="light">
       <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
@@ -218,5 +263,4 @@
   </center>
 </body>
 </html>
-
 <script src="JSmainScript.js"></script>

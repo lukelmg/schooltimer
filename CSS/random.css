@@ -7,43 +7,71 @@ canvas {
   height: 100vh;
 }
 
-
-#Progress_Status { 
-  width: 50%; 
-  background-color: #40444F; 
-  height: 20px;
-   display:inline-block;
-  margin-top: 0px;
-} 
-  
-#myprogressBar { 
-  width: 2%; 
-  height: 20px; 
-  background-color: #ff1c3e; 
-  float:left;
-} 
-
-
-
-#progressPercent {
-  display:inline-block;
-  top:50%;
-    -ms-transform: translateY(-25%);
-  transform: translateY(-25%);
+#continueButton {
+  background-color:transparent;
+  border: 1px solid white;
+  padding: 10px 10px 10px 10px;
   color:white;
-  font-weight:bold;
+  width: 40vh;
+  height: 20vh;
+  font-size: 3vh;
+  display:none;
+}
+
+#continueButton:hover {
+  background-color:white;
+  color:black;
+  cursor:pointer;
+}
+
+#customSurvey {
+   
+
+  z-index: 1000;
+  position:relative;
+  border-radius: 5px;
+  top:40%;
+  left: 40%;
+  position: absolute;
+
+  padding: 10px 10px 10px 10px;
+  color:black;
+
+  background-color:transparent;
 }
 
 
+#Progress_Status {
+  width: 50%;
+  background-color: #40444F;
+  height: 20px;
+  display: inline-block;
+  margin-top: 0px;
+}
 
+#myprogressBar {
+  width: 2%;
+  height: 20px;
+  background-color: #ff1c3e;
+  float: left;
+}
+
+#progressPercent {
+  display: inline-block;
+  top: 50%;
+  -ms-transform: translateY(-25%);
+  transform: translateY(-25%);
+  color: white;
+  font-weight: bold;
+}
 
 #myName {
-   color: white;
-    font-size: 3vh;
-   font-family: Arial;
-   margin: 0px 0px;
-   display: inline-block;
-   margin-left: 5px;
+  color: white;
+  font-size: 3vh;
+  font-family: Arial;
+  margin: 0px 0px;
+  display: inline-block;
+  margin-left: 5px;
 }
 
 #myName:hover {
@@ -58,50 +86,71 @@ canvas {
 }
 
 @-webkit-keyframes wiggle {
-  0% {-webkit-transform: rotate(5deg);}
-  25% {-webkit-transform: rotate(-5deg);}
-  50% {-webkit-transform: rotate(10deg);}
-  75% {-webkit-transform: rotate(-2deg);}
-  100% {-webkit-transform: rotate(0deg);}
+  0% {
+    -webkit-transform: rotate(5deg);
+  }
+  25% {
+    -webkit-transform: rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: rotate(10deg);
+  }
+  75% {
+    -webkit-transform: rotate(-2deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
 }
 
 @-ms-keyframes wiggle {
-  0% {-ms-transform: rotate(1deg);}
-  25% {-ms-transform: rotate(-1deg);}
-  50% {-ms-transform: rotate(1.5deg);}
-  75% {-ms-transform: rotate(-5deg);}
-  100% {-ms-transform: rotate(0deg);}
+  0% {
+    -ms-transform: rotate(1deg);
+  }
+  25% {
+    -ms-transform: rotate(-1deg);
+  }
+  50% {
+    -ms-transform: rotate(1.5deg);
+  }
+  75% {
+    -ms-transform: rotate(-5deg);
+  }
+  100% {
+    -ms-transform: rotate(0deg);
+  }
 }
 
 @keyframes wiggle {
-  0% {transform: rotate(5deg);}
-  25% {transform: rotate(-5deg);}
-  50% {transform: rotate(10deg);}
-  75% {transform: rotate(-2deg);}
-  100% {transform: rotate(0deg);}
+  0% {
+    transform: rotate(5deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
-
-#invis {
-  background-color:transparent;
-  width: 50px;
-  height: 50px;
-  cursor:progress;
-  float:right;
-}
-
 
 #versionNumber {
-   color: white;
-    font-size: 3vh;
-   font-family: Arial;
-   margin: 0px 0px 0px 0px;
-  margin-left:-150px;
-   display: inline-block;
-   margin-left: 5px;
+  color: white;
+  font-size: 3vh;
+  font-family: Arial;
+  margin: 0px 0px 0px 0px;
+  margin-left: -150px;
+  display: inline-block;
+  margin-left: 5px;
 }
 #versionNumber:hover {
-animation: shake .3s cubic-bezier(.36,.07,.19,.97) both;
-  
+  animation: shake 0.3s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
@@ -109,113 +158,111 @@ animation: shake .3s cubic-bezier(.36,.07,.19,.97) both;
 }
 
 @keyframes shake {
-  10%, 90% {
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0);
   }
-  
-  20%, 80% {
+
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0);
   }
 
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     transform: translate3d(-4px, 0, 0);
   }
 
-  40%, 60% {
+  40%,
+  60% {
     transform: translate3d(4px, 0, 0);
   }
-  10%, 90% {
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0);
   }
-  
-  20%, 80% {
+
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0);
   }
 
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     transform: translate3d(-4px, 0, 0);
   }
 
-  40%, 60% {
+  40%,
+  60% {
     transform: translate3d(4px, 0, 0);
   }
 }
 
-
-
-
-
 #alertOverlay {
   position: fixed;
   width: 100%;
-  text-align:center;
+  text-align: center;
   top: 30%;
   opacity: 0;
 }
 #tabTitleOverlay {
   width: 20%;
   height: 100px;
-  background-color:#40444F;
-border-radius: 5px;
-  
+  background-color: #40444F;
+  border-radius: 5px;
 }
 #alertText {
   padding-top: 15%;
   padding-bottom: 15%;
-  color:white;
-  font-weight:bold;
-  font-size:24px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
 }
-
-
-
 
 #lunchAlertOverlay {
   position: fixed;
   width: 100%;
-  text-align:center;
+  text-align: center;
   top: 30%;
   opacity: 0;
 }
 #lunchTitleOverlay {
   width: 20%;
   height: 100px;
-  background-color:#40444F;
-border-radius: 5px;
-  
+  background-color: #40444F;
+  border-radius: 5px;
 }
 #lunchAlertText {
   padding-top: 15%;
   padding-bottom: 15%;
-  color:white;
-  font-weight:bold;
-  font-size:24px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
 }
 
-
-
-
 #closeButton {
-  float:right;
-  float:top;
-  margin: 5px 5px 5px 5px;
-   padding: 0px 0px 0px 0px;
-  width:10%;
-  height:40%;
-  
-  border-radius: 50%;
-
-  
-  background-color: #DB3D3D; /* Green */
+  float: right;
+  float: top;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  width: 3vh;
+  height: 3vh;
+  /* border-radius: 0px 0px 0px 25%; */
+  font-size: 1em;
+  background-color: #1F2026;
   border: none;
   color: white;
-
   text-align: center;
   text-decoration: none;
   display: inline-block;
-
   cursor: pointer;
-  
+  transition: 0.1s ease-in;
+}
+
+#closeButton:hover {
+  background-color: #FF1C3E;
 }
 #mydiv {
   position: absolute;
@@ -225,99 +272,99 @@ border-radius: 5px;
   border: 1px solid #d3d3d3;
   top: -600px;
   left: 60%;
-  margin: 0px 0px 0px 0px;
-   padding: 0px 0px 0px 0px;
-      -webkit-box-shadow: 0 0 20px 2px black;
-    -moz-box-shadow: 0 0 20px 2px black;
-    box-shadow: 0 0 20px 2px black;
-        moz-transition: all .2s ease-in-out;
-   -o-transition: all .2s ease-in-out;
-   -webkit-transition: all .2s ease-in-out;
-   transition: all .2s ease-in-out;
-
+  box-shadow: 0 0 20px 2px black;
+  transition: all 0.2s ease-in-out;
+  width: 200px;
 }
-
-
 #mydivheader {
-  padding: 10px;
-  z-index: 10;
   background-color: #1F2026;
   color: #fff;
-  margin: 0px 0px 0px 0px;
-  float:top;
-  margin-bottom:0px;
+  float: top;
+  height: 10vh;
+  margin-top: -26px;
+  padding-bottom:20px;
 }
 
-#getDate   {
-  color:white; 
-  display:inline-block;
+#colorPickerTextHeader {
+  text-align: center;
+  padding-top: 3.2vh;
+  font-size: 2em;
+}
+
+#getDate {
+  color: white;
+  display: inline-block;
   font-family: Arial;
-  font-size: 9vh;
+  font-size: 7.5vh;
   margin-bottom: 0px;
-  margin-top: 20px;
+  margin-top: 2.5vh;
   font-weight: bold;
-      moz-transition: all .3s ease-in-out;
-   -o-transition: all .3s ease-in-out;
-   -webkit-transition: all .4s ease-in-out;
-   transition: all .3s ease-in-out;
+  moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  
 }
 
 #getDate:hover {
   transform: skew(10deg, 10deg);
 }
 
- #endYearTxt {
-  display:inline-block;
-  color:white;
+#endYearTxt {
+  display: inline-block;
+  color: white;
   font-family: Arial;
   font-weight: bold;
   margin-top: 0px;
   margin-bottom: 0px;
-   font-size:3vh;
-      moz-transition: all .3s ease-in-out;
-   -o-transition: all .3s ease-in-out;
-   -webkit-transition: all .4s ease-in-out;
-   transition: all .3s ease-in-out;
-  }
+  font-size: 3vh;
+  moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  line-height:1.5vh;
+  margin-top: 10px;
+  margin-bottom:10px;
+  
+}
 
 #endYearTxt:hover {
-    transform: skew(-5deg, -5deg);
+  transform: skew(-5deg, -5deg);
 }
 
 body {
-   background-color: #101214;
-   }
-   #copy {
-   color: white;
-    font-size: 3vh;
-   font-family: Arial;
-   margin: 0px 0px;
-   display: inline-block;
-   margin-left: 5px;
-   }
-  #betaLink {
-   display: inline-block;
-   color: white;
-   font-family: Arial;
-   font-weight: bold;
-   }
-   #secret {
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    padding: 32px 32px;
-    margin: 0px 50px;
-    float:right;
-  }  
-
-#milliTest {
- color: white;
- font-size: 50px;
+  background-color: #101214;
+}
+#copy {
+  color: white;
+  font-size: 3vh;
+  font-family: Arial;
+  margin: 0px 0px;
+  display: inline-block;
+  margin-left: 5px;
+}
+#betaLink {
+  display: inline-block;
+  color: white;
+  font-family: Arial;
+  font-weight: bold;
+}
+#secret {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  padding: 32px 32px;
+  margin: 0px 50px;
+  float: right;
 }
 
+#milliTest {
+  color: white;
+  font-size: 50px;
+}
 
 #fade {
   display: none;
@@ -329,7 +376,7 @@ body {
   background-color: black;
   z-index: 1001;
   -moz-opacity: 0.8;
-  opacity: .80;
+  opacity: 0.8;
   filter: alpha(opacity=80);
 }
 
@@ -372,28 +419,26 @@ body {
 }
 
 #fade:hover ~ #boxclose {
-  display:none;
+  display: none;
 }
 
 .test:hover ~ .test2 {
   display: none;
 }
 
-
-
 #quoteBox {
-  float:right;
+  float: right;
   margin: 10px 50px 10px 10px;
   width: 15%;
 }
 
 #quoteTxt {
-  color:white;
+  color: white;
   font-family: Arial;
   font-weight: Bold;
 }
 
 #quote {
-  color:white;
+  color: white;
   font-family: Arial;
 }

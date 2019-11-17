@@ -1,9 +1,7 @@
-//https://glitch.com/edit/#!/join/5864357c-6e57-4d7b-9dd2-bed20992841e
-
 //STAY AT TOP
 
 function schooltimer() {
-  
+  hasLoadBefore();
   Apressed();   //change to change schedule
   
 }
@@ -26,13 +24,11 @@ function refreshAt(hours, minutes, seconds) {
 }
 
 refreshAt(7,40,0);
-refreshAt(1,0,0);
 
 //STAY AT TOP
 
-
 function middleTimer() {
-  window.location.href = 'https://middleschooltimer.glitch.me';
+  window.location.href = 'http://middleschooltimer.glitch.me';
 }
 
 
@@ -46,104 +42,8 @@ var one = 0;
 var two = 0;
 var three = 0;
 
-
-let canvas = document.getElementById('confetti');
-
-canvas.width = 1920;
-canvas.height = 1080;
-
-let ctx = canvas.getContext('2d');
-let pieces = [];
-let numberOfPieces = 50;
-let lastUpdateTime = Date.now();
-
-function randomColor () {
-    let colors = ['#f00', '#0f0', '#00f', '#0ff', '#f0f', '#ff0'];
-    return colors[Math.floor(Math.random() * colors.length)];
-}
-
-function update () {
-    let now = Date.now(),
-        dt = now - lastUpdateTime;
-
-    for (let i = pieces.length - 1; i >= 0; i--) {
-        let p = pieces[i];
-
-        if (p.y > canvas.height) {
-            pieces.splice(i, 1);
-            continue;
-        }
-
-        p.y += p.gravity * dt;
-        p.rotation += p.rotationSpeed * dt;
-    }
-
-
-    while (pieces.length < numberOfPieces) {
-        pieces.push(new Piece(Math.random() * canvas.width, -20));
-    }
-
-    lastUpdateTime = now;
-
-    setTimeout(update, 1);
-}
-
-function draw () {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    pieces.forEach(function (p) {
-        ctx.save();
-
-        ctx.fillStyle = p.color;
-
-        ctx.translate(p.x + p.size / 2, p.y + p.size / 2);
-        ctx.rotate(p.rotation);
-
-        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
-
-        ctx.restore();
-    });
-
-    requestAnimationFrame(draw);
-}
-
-function Piece (x, y) {
-    this.x = x;
-    this.y = y;
-    this.size = (Math.random() * 0.5 + 0.75) * 15;
-    this.gravity = (Math.random() * 0.5 + 0.75) * 0.3;
-    this.rotation = (Math.PI * 2) * Math.random();
-    this.rotationSpeed = (Math.PI * 2) * (Math.random() - 0.5) * 0.001;
-    this.color = randomColor();
-}
-
-while (pieces.length < numberOfPieces) {
-    pieces.push(new Piece(Math.random() * canvas.width, Math.random() * canvas.height));
-}
-
-function confet() {
-update();
-draw();
-  numberOfPieces = numberOfPieces*1.1;
-  if (numberOfPieces > 1000) {
-    location.reload();
-  }
-}
-
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if (new Date().getTime() - start > milliseconds) {
-      break;
-    }
-  }
-}
-
-
-
-
 function crazy() {
-  alert("you've activated strobe light mode")
+  alert("you've activated strobe light mode");
    changeColor();
 }
 
@@ -185,7 +85,12 @@ $(document).keydown(function(e){
   }
 
   
-    if ((e.metaKey || e.ctrlKey) && (e.metaKey || e.shiftKey) && ( String.fromCharCode(e.which).toLowerCase() === 'l') ) {
+  
+  
+  
+  
+  
+   if ((e.metaKey || e.ctrlKey) && (e.metaKey || e.shiftKey) && ( String.fromCharCode(e.which).toLowerCase() === 'l') ) {
      if (lunchMode == 'off') {
        lunchMode = 'on';
      } else {
@@ -194,6 +99,11 @@ $(document).keydown(function(e){
        }
      }
    }
+  
+  
+  
+  
+  
   
   
     if ((e.metaKey || e.ctrlKey) && ( String.fromCharCode(e.which).toLowerCase() === 'x') ) {
@@ -255,24 +165,6 @@ $(document).keydown(function(e){
   }
 });
 
-function getInvis() {
-    var access = prompt("PLEASE ENTER ACCESS CODE");
-    if (access == "do a barrel roll" || access == "do a barrel roll") {alert("ok"); invis(); } else {alert("no")}
-}
-
-  var i = 0;
-
-function invis() {
-    setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-      rotate = rotate + 10;
-        updateTransform();        //  your code here
-      i++;                     //  increment the counter
-      if (i < 99999999999) {            //  if the counter < 10, call the loop function
-         invis();          //  ..  again which will trigger another 
-      }                        //  ..  setTimeout()
-   }, 50)
-}
-
 function updateScale(){
   document.body.style.transform = 'scale(' + scale + ')';
 }
@@ -286,13 +178,52 @@ function unload() {
   document.getElementById("loadingScreen").style.top = "0%";
   setTimeout(function() {
       clearLoad();
-}, 700);
+}, 999999999999);
 
 }
 
+
+function unloadQuick() {
+  document.getElementById("loadingScreen").style.top = "0%";
+  setTimeout(function() {
+      clearLoad();
+}, 500);
+
+}
 function clearLoad() {
   document.getElementById("loadingScreen").style.top = "-100%";
   document.getElementById("loadingScreen").style.zIndex = "-1";
+}
+
+var doneSurvey;
+doneSurvey = localStorage.getItem("doneSurvey");
+
+var otherData;
+
+function hasLoadBefore() {
+  //alert("done")
+ if (doneSurvey == null) {
+   otherData = "has not loaded";
+  // alert("has not loaded");
+   doneSurvey = 1;
+   localStorage.setItem("doneSurvey", "yes");
+   document.getElementById("continueButton").style.display = "none";
+   unload();
+ } else {
+   otherData = "has loaded before";
+  // alert("has loaded");
+   document.getElementById("continueButton").style.display = "none";
+  unloadQuick();
+ }
+  
+  
+}
+
+function loadSurvey (){
+  window.open('https://docs.google.com/forms/d/e/1FAIpQLSd9cvJnKrxNWSY6z4Mc-o8SdOxr1ghBS_3W8Zis6BmlKXADpw/viewform','mywindow').focus()
+ setTimeout(function() {
+      clearLoad();
+}, 500);
 }
 
 
@@ -319,57 +250,99 @@ var up = document.getElementById("GFG_P");
             }
             up.innerHTML = a; 
         } 
+document.getElementById("advancedStats").style.display = "-20vw";
 
-/*
 
-function timeUntilWeekend () {
-  var d = new Date();
-  var n = d.getDay()
-
-  var actualDate;
-  var actualTimeUntil;
+var outState = 0;
+function moreStatsOut() {
   
-  if (n == 1) {
-    actualDate = 'Monday';
-    actualTimeUntil = endHour + 96;
+  if (outState == 1) {
+ document.getElementById("advancedStats").style.marginRight = "-20vw";
+   outState = 0; 
   } else {
-    if (n == 2) {
-      actualDate = 'Tuesday';
-      actualTimeUntil = endHour + 72;
+    if (outState == 0) {
+    document.getElementById("advancedStats").style.marginRight = "10px";
+      outState = 1;
+    }
+  }
+}
+
+
+function weekendCalculate () {
+  var newHour = parseFloat(endHour);
+  var newMin = parseFloat(endMin);
+
+  var currentDateToday = new Date().getTime();
+  var dt = new Date(currentDateToday);
+
+  var newDt = String(dt);
+  
+  var sunday = newDt.includes("Sun");
+  var monday = newDt.includes("Mon");
+  var tuesday = newDt.includes("Tue");
+  var wednesday = newDt.includes("Wed");
+  var thursday = newDt.includes("Thur");
+  var friday = newDt.includes("Fri");
+  var saturday = newDt.includes("Sat");
+
+  if (sunday == true) {
+    newHour = newHour + 120;
+  } else {
+    if (monday == true) {
+      newHour = newHour + 96;
     } else {
-      if (n == 3) {
-        actualDate = 'Wednesday';
-        actualTimeUntil = endHour + 48;
+      if (tuesday == true) {
+        newHour = newHour + 72;
       } else {
-        if (n == 4){ 
-          actualDate = 'Thursday';
-          actualTimeUntil = endHour + 24;
+        if (wednesday == true) {
+          newHour = newHour + 48;
         } else {
-          if (n == 5){
-              actualDate = 'Friday';
+          if (thursday == true) {
+            newHour = newHour + 24;
+          } else {
+            if (friday == true) {
+              newHour = newHour + 0;
             } else {
-              if (n==6){
-                actualDate = 'Saturday';
-                actualTimeUntil = endHour + 144;
-                {
-                  if (n==7) {
-                    actualDate = 'Sunday';
-                    actualTimeUntil = endHour + 120;
-                  }
-                }
+              if (saturday == true) {
+                newHour = newHour + 144;
               }
             }
           }
         }
       }
     }
+  }
+  
+  var days = newHour / 24;
+  days = Math.trunc(days);
+  
+  var hourInDays = days * 24;
+  
+  newHour = newHour - hourInDays
+  
+  if (schoolOver == 'yes') {
+    newHour = newHour - 24;
+  }
+  if (newHour < 0) {
+  newHour = newHour * -1;
+    newHour = 24-newHour;
+  }
   
   
-  document.getElementById('untilWeekend').innerHTML = endHour + "h " + endMin + "m " + seconds + "s";
+  document.getElementById('untilWeekend').innerHTML = days + 'd ' + newHour + 'h ' + newMin + 'm ' + seconds + "s";
 }
 
 
-*/
+
+  
+//alert(sunday + "\n" + monday + "\n" + tuesday + "\n" + wednesday + "\n" + thursday + "\n" + friday + "\n" + saturday);
+
+
+
+
+
+
+
 
 
 var countDownDate = new Date("Jun 16, 2020 15:37:25").getTime();
@@ -396,7 +369,7 @@ var x = setInterval(function() {
 }, 0);
 
 function stuff() {
-   var win = window.open("https://schooltimer.glitch.me/stuff.html", '_blank');
+   var win = window.open("http://schooltimer.glitch.me/stuff.html", '_blank');
    win.focus();
 }
 
@@ -415,61 +388,19 @@ function moveColor()
 { 
 
   if (onoff == 0) {
-  document.getElementById("mydiv").style.top = "10%";
+  document.getElementById("mydiv").style.top = "2%";
   onoff = 1;
     if (colorCount == 25){
       alert("In what scenario would you need to click this button 25 times? \n \n Tell me if you got this message. I'm genuinely curious");
     }
   }
   else {
-  document.getElementById("mydiv").style.top = "-550px";
+  document.getElementById("mydiv").style.top = "-650px";
     onoff = 0;
     colorCount = colorCount + 1;
   }
 }
 
-dragElement(document.getElementById("mydiv"));
-
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    /* if present, the header is where you move the DIV from:*/
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    /* otherwise, move the DIV from anywhere inside the DIV:*/
-    elmnt.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    /* stop moving when mouse button is released:*/
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
 
 function date() {
   let current_datetime = new Date()
@@ -769,7 +700,7 @@ function tick1() { //first Period
       playSoundTick();
     }
     if (hh <= 24 && hh >= 8) {
-        document.getElementById("firstEndText").innerHTML = "Period 1 Is Over!";
+        document.getElementById("firstEndText").innerHTML = "Period 1 Is Over";
         document.getElementById('firstEnd').innerHTML = '';
         timeDetect1 = 0;
     } else {
@@ -793,7 +724,7 @@ function tick2() { //second Period
     var hh = pad((remain / 60 / 60) % 60);
     var mm = pad((remain / 60) % 60);
     if (hh <= 24 && hh >= 8) {
-        document.getElementById("secondEndText").innerHTML = "Period 2 Is Over!";
+        document.getElementById("secondEndText").innerHTML = "Period 2 Is Over";
         document.getElementById('secondEnd').innerHTML = '';
       timeDetect2 = 1;
     } else {
@@ -818,7 +749,7 @@ function tick3() { //third Period
     var hh = pad((remain / 60 / 60) % 60);
     var mm = pad((remain / 60) % 60);
     if (hh <= 24 && hh >= 8) {
-        document.getElementById("thirdEndText").innerHTML = "Period 3 Is Over!";
+        document.getElementById("thirdEndText").innerHTML = "Period 3 Is Over";
         document.getElementById('thirdEnd').innerHTML = '';
       timeDetect3 = 0;
     } else {
@@ -872,9 +803,9 @@ function tick4() { //fourth Period
   } else {
     document.getElementById('fourthEnd').innerHTML = ' ';
     if (lunchMode == 'off') {
-    document.getElementById("fourthEndText").innerHTML = "Period 4 Is Over!"; 
+    document.getElementById("fourthEndText").innerHTML = "Period 4 Is Over"; 
     } else {
-        document.getElementById("fourthEndText").innerHTML = "Period 4 Lunch Is Over!"; 
+        document.getElementById("fourthEndText").innerHTML = "Period 4 Lunch Is Over"; 
     }
     timeDetect4 = 0;
   }
@@ -920,9 +851,9 @@ function tick5() { //fourth Period
   } else {
     document.getElementById('fifthEnd').innerHTML = ' ';
     if (lunchMode == 'off') {
-    document.getElementById("fifthEndText").innerHTML = "Period 5 Is Over!"; 
+    document.getElementById("fifthEndText").innerHTML = "Period 5 Is Over"; 
     } else {
-       document.getElementById("fifthEndText").innerHTML = "Period 5 Lunch Is Over!";  
+       document.getElementById("fifthEndText").innerHTML = "Period 5 Lunch Is Over";  
     }
     timeDetect5 = 0;
   }
@@ -971,9 +902,9 @@ function tick6() { //fourth Period
   } else {
     document.getElementById('sixthEnd').innerHTML = ' ';
     if (lunchMode == 'off') {
-    document.getElementById("sixthEndText").innerHTML = "Period 6 Is Over!"; 
+    document.getElementById("sixthEndText").innerHTML = "Period 6 Is Over"; 
     } else {
-    document.getElementById("sixthEndText").innerHTML = "Period 6 Lunch Is Over!";  
+    document.getElementById("sixthEndText").innerHTML = "Period 6 Lunch Is Over";  
     }
     timeDetect6 = 0;
   }
@@ -1022,9 +953,9 @@ function tick7() { //fourth Period
   } else {
     document.getElementById('seventhEnd').innerHTML = ' ';
      if (lunchMode == 'off') {
-    document.getElementById("seventhEndText").innerHTML = "Period 7 Is Over!"; 
+    document.getElementById("seventhEndText").innerHTML = "Period 7 Is Over"; 
      } else {
-      document.getElementById("seventhEndText").innerHTML = "Period 7 Lunch Is Over!";   
+      document.getElementById("seventhEndText").innerHTML = "Period 7 Lunch Is Over";   
      }
     timeDetect7 = 0;
   }
@@ -1040,7 +971,7 @@ function tick8() { //fourth Period
     var hh = pad((remain / 60 / 60) % 60);
     var mm = pad((remain / 60) % 60);
    if (hh <= 24 && hh >= 8) {
-        document.getElementById("eighthEndText").innerHTML = "Period 8 Is Over!";
+        document.getElementById("eighthEndText").innerHTML = "Period 8 Is Over";
         document.getElementById('eighthEnd').innerHTML = '';
         timeDetect8 = 0;
     } else {
@@ -1074,10 +1005,10 @@ function ticke() { //fourth Period
   
   
     if (hh <= 24 && hh >= 8) {
-        document.getElementById('endText').innerHTML = 'School Is OVER!' ;
+        document.getElementById('endText').innerHTML = 'School Is Over' ;
         schoolOver = 'yes';
         document.getElementById('time').innerHTML = " ";
-        document.title = "School Is Over!"; 
+        document.title = "School Is Over"; 
       
 
       timeDetecte = 0;
@@ -1098,12 +1029,182 @@ function ticke() { //fourth Period
     }
 }//end of day
 
+
+function untilThanks (){
+  
+  var newHour = parseFloat(endHour);
+  var newMin = parseFloat(endMin);
+
+  var countDownDate = new Date("Nov 27, 2019 15:53:00").getTime();
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("untilThanks").innerHTML = days + "d " + newHour + "h "  + newMin + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(untilThanks);
+    document.getElementById("untilThanks").innerHTML = "Time Up!";
+  }
+}
+
+function quarter2 (){
+  
+  var newHour = parseFloat(endHour);
+  var newMin = parseFloat(endMin);
+
+  var countDownDate = new Date("Jan 24, 2020 15:53:00").getTime();
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("until2Quarter").innerHTML = days + "d " + newHour + "h "  + newMin + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(quarter2);
+    document.getElementById("until2Quarter").innerHTML = "Quarter 2 Is Over";
+  }
+}
+
+
+function quarter3 (){
+  
+  var newHour = parseFloat(endHour);
+  var newMin = parseFloat(endMin);
+
+  var countDownDate = new Date("Apr 2, 2020 15:53:00").getTime();
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("until3Quarter").innerHTML = days + "d " + newHour + "h "  + newMin + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(quarter2);
+    document.getElementById("until3Quarter").innerHTML = "Quarter 3 Is Over";
+  }
+}
+
+
+
+function quarter4 (){
+  
+  var newHour = parseFloat(endHour);
+  var newMin = parseFloat(endMin);
+
+  var countDownDate = new Date("Jun 12, 2020 15:53:00").getTime();
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("until4Quarter").innerHTML = days + "d " + newHour + "h "  + newMin + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(quarter2);
+    document.getElementById("until4Quarter").innerHTML = "Quarter 4 Is Over";
+  }
+}
+
+
+function schoolEnd (){
+  
+  var newHour = parseFloat(endHour);
+  var newMin = parseFloat(endMin);
+
+  var countDownDate = new Date("Jun 12, 2020 15:53:00").getTime();
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("schoolEnd").innerHTML = days + "d " + newHour + "h "  + newMin + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(quarter2);
+    document.getElementById("schoolEnd").innerHTML = "The School Year is Over!";
+  }
+}
+
+
+function seniorEnd (){
+  
+  var newHour = parseFloat(endHour);
+
+  var countDownDate = new Date("Jun 4, 2020 10:30:00").getTime();
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("seniorEnd").innerHTML = days + "d " + hours + "h "  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(quarter2);
+    document.getElementById("seniorEnd").innerHTML = "Senior Year is Over";
+  }
+}
+
+
+function winterBreak (){
+  
+  var newHour = parseFloat(endHour);
+
+  var countDownDate = new Date("Dec 21, 2019 14:53:00").getTime();
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("winterBreak").innerHTML = days + "d " + hours + "h "  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(quarter2);
+    document.getElementById("winterBreak").innerHTML = "Has Started!";
+  }
+}
+
+
+
+                           
+                           
+                           
 function repeat() {
     tick1(); tick2(); tick3(); tick4(); tick5(); tick6(); tick7(); tick8(); ticke();
+   quarter2(); quarter3(); quarter4(); schoolEnd(); seniorEnd(); untilThanks();
   
- // timeUntilWeekend();
-  
-  date();
+  date();  weekendCalculate(); winterBreak();
   
     document.addEventListener('DOMContentLoaded', tick1);
     document.addEventListener('DOMContentLoaded', tick2);
@@ -1131,7 +1232,7 @@ function selectColorElement() {
 var hex1; var hex2; var hex3; var hex4; var hex5; var hex6;
   
 var colorPicker = new iro.ColorPicker("#color-picker-container", {
-  width: 120,
+  width: 150,
   color: "#fff"
 });
   
@@ -1162,7 +1263,6 @@ colorPicker.on(["color:init", "color:change"], function(color){
   
 
 
-
 function setElementsAsValues () {
           Dsidebar = settingDpres;
           settingTxtD = settingDTxtpres;
@@ -1185,9 +1285,28 @@ function setElementsAsValues () {
          // document.getElementById("video").style.backgroundColor = accent;
          // document.getElementById("myBtn").style.backgroundColor = accent;
           document.getElementById("feature").style.backgroundColor = settingDpres;
-   document.getElementById("middleTimer").style.backgroundColor = settingDpres;
+   //document.getElementById("moreStats").style.backgroundColor = "green";
+        document.getElementById("middleTimer").style.backgroundColor = settingDpres;
+       
           document.getElementById("title").style.color = accent;
           document.getElementById("myprogressBar").style.backgroundColor = accent;
+  
+  
+  var advancedStatTextColor = document.getElementsByClassName("timeValueAdvanced");
+  var stat = document.getElementsByClassName("stat");
+  document.getElementById("advancedStats").style.backgroundColor = sidebar;
+  
+for (var i = 0; i < advancedStatTextColor.length; i++) {
+    advancedStatTextColor[i].style.color = accent;
+}
+  for (var i = 0; i < stat.length; i++) {
+    stat[i].style.backgroundColor = background;
+    stat[i].style.color = text;
+}
+  
+
+  
+//       document.getElementById("untilThanks").style.color = accent;
   
             document.getElementById("firstEndText").style.color = text; //time text
             document.getElementById("secondEndText").style.color = text;
@@ -1234,7 +1353,12 @@ function setElementsAsValues () {
   
     document.getElementById("feature").style.backgroundColor = settingDpres;
   document.getElementById("feature").style.color = settingDTxtpres;
-         document.getElementById("middleTimer").style.color = settingDTxtpres;
+  
+   // document.getElementById("moreStats").style.backgroundColor = settingDpres;
+  //document.getElementById("moreStats").style.color = settingDTxtpres;
+  
+    document.getElementById("middleTimer").style.backgroundColor = settingDpres;
+  document.getElementById("middleTimer").style.color = settingDTxtpres;
   
           document.getElementById("myBtn").style.backgroundColor = settingDpres;
           document.getElementById("myBtn").style.color = settingDTxtpres;
@@ -1356,6 +1480,15 @@ var radioColor = 'white';
        
     localStorage.setItem("customBackgroundColor", hex1);
        
+         var statBack = document.getElementsByClassName("stat");
+       
+              for (var i = 0; i < statBack.length; i++) {
+            statBack[i].style.backgroundColor = hex1;
+              }
+         
+       
+       
+       
      } else {
        if (element == 'accent') {   //ACCENT
           document.getElementById("endText").style.color = hex1;
@@ -1365,6 +1498,15 @@ var radioColor = 'white';
           document.getElementById("myprogressBar").style.backgroundColor = hex1;
          
           localStorage.setItem("customAccentColor", hex1);
+         
+         
+          var accentStat = document.getElementsByClassName("timeValueAdvanced");
+       
+              for (var i = 0; i < accentStat.length; i++) {
+            accentStat[i].style.color = hex1;
+              }
+         
+         
          // alert(hex1);
          
        } else {
@@ -1394,10 +1536,18 @@ var radioColor = 'white';
             document.getElementById("myName").style.color = hex1;
            
             localStorage.setItem("customTextColor", hex1);
+           
+            var stat = document.getElementsByClassName("stat");
+       
+              for (var i = 0; i < stat.length; i++) {
+            stat[i].style.color = hex1;
+              }
+           
          } else {
            if (element == 'sidebar') { //SIDEBAR
                 document.getElementById("dayContainer").style.backgroundColor = hex1;
                 document.getElementById("yearContainer").style.backgroundColor = hex1;
+              document.getElementById("advancedStats").style.backgroundColor = hex1;
              
              localStorage.setItem("customSidebarColor", hex1);
            } else {
@@ -1451,7 +1601,10 @@ var radioColor = 'white';
                   // document.getElementById("video").style.color = hex1;
                    document.getElementById("myBtn").style.color = hex1;
                    document.getElementById("feature").style.color = hex1;
-                        document.getElementById("middleTimer").style.color = hex1;
+                 
+                //   document.getElementById("moreStats").style.color = hex1;
+                 
+                   document.getElementById("middleTimer").style.color = hex1;
                  
                    localStorage.setItem("customButtonTextColor", hex1);
                } else {
@@ -1460,7 +1613,10 @@ var radioColor = 'white';
                     localStorage.setItem("customSettingDisabledColor", hex1);
                    
                      document.getElementById("feature").style.backgroundColor = hex1;
-                    document.getElementById("middleTimer").style.backgroundColor = hex1;
+                   
+                  // document.getElementById("moreStats").style.backgroundColor = hex1;
+                   
+                   document.getElementById("middleTimer").style.backgroundColor = hex1;
                    document.getElementById("myBtn").style.backgroundColor = hex1;
                     document.getElementById("Progress_Status").style.backgroundColor = hex1;//asdfasdfasdf
                    
@@ -1503,7 +1659,8 @@ var radioColor = 'white';
                     
                          document.getElementById("myBtn").style.color = hex1;
                           document.getElementById("feature").style.color = hex1;
-                         document.getElementById("middleTimer").style.color = hex1;
+                          //document.getElementById("moreStats").style.color = hex1;
+                          document.getElementById("middleTimer").style.color = hex1;
                          buttonTxtColorChange();
                          
                        }
@@ -1713,15 +1870,15 @@ function setPresetValStealth() {
 }
 
 function setPresetValBlue() {
-    background = '020D19'
+    background = '01080f'
     accent = '#03D5F8';
     text = 'E1F4FF';
     sidebar = '0a1c30'
     sidebarTxt = 'white';
     buttonTxtPres = 'white';
-    settingDpres = '#40444F';
+    settingDpres = '#071024';
     settingDTxtpres = 'white';
-    settingEpres = '#626978';
+    settingEpres = '#15223d';
     settingETxtpres = 'white';
     
     radioDiv = 'white';
@@ -1756,7 +1913,7 @@ function setPresetValGreen() {
     sidebar = '#1a1c1c';
     sidebarTxt = 'white';
     buttonTxtPres = 'white';
-    settingDpres = '#40444F';
+    settingDpres = '#2B3030';
     settingDTxtpres = 'white';
     settingEpres = '#626978';
     settingETxtpres = 'white';
@@ -1861,4 +2018,100 @@ function setPresetValTerrible() {
     radioColor = 'white';
     radioExtra = radioColor;
     scheduleSelectColor = '#40444F';  
+}
+
+
+
+
+
+let canvas = document.getElementById('confetti');
+
+canvas.width = 1920;
+canvas.height = 1080;
+
+let ctx = canvas.getContext('2d');
+let pieces = [];
+let numberOfPieces = 50;
+let lastUpdateTime = Date.now();
+
+function randomColor () {
+    let colors = ['#f00', '#0f0', '#00f', '#0ff', '#f0f', '#ff0'];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function update () {
+    let now = Date.now(),
+        dt = now - lastUpdateTime;
+
+    for (let i = pieces.length - 1; i >= 0; i--) {
+        let p = pieces[i];
+
+        if (p.y > canvas.height) {
+            pieces.splice(i, 1);
+            continue;
+        }
+
+        p.y += p.gravity * dt;
+        p.rotation += p.rotationSpeed * dt;
+    }
+
+
+    while (pieces.length < numberOfPieces) {
+        pieces.push(new Piece(Math.random() * canvas.width, -20));
+    }
+
+    lastUpdateTime = now;
+
+    setTimeout(update, 1);
+}
+
+function draw () {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    pieces.forEach(function (p) {
+        ctx.save();
+
+        ctx.fillStyle = p.color;
+
+        ctx.translate(p.x + p.size / 2, p.y + p.size / 2);
+        ctx.rotate(p.rotation);
+
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+
+        ctx.restore();
+    });
+
+    requestAnimationFrame(draw);
+}
+
+function Piece (x, y) {
+    this.x = x;
+    this.y = y;
+    this.size = (Math.random() * 0.5 + 0.75) * 15;
+    this.gravity = (Math.random() * 0.5 + 0.75) * 0.3;
+    this.rotation = (Math.PI * 2) * Math.random();
+    this.rotationSpeed = (Math.PI * 2) * (Math.random() - 0.5) * 0.001;
+    this.color = randomColor();
+}
+
+while (pieces.length < numberOfPieces) {
+    pieces.push(new Piece(Math.random() * canvas.width, Math.random() * canvas.height));
+}
+
+function confet() {
+update();
+draw();
+  numberOfPieces = numberOfPieces*1.1;
+  if (numberOfPieces > 1000) {
+    location.reload();
+  }
+}
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if (new Date().getTime() - start > milliseconds) {
+      break;
+    }
+  }
 }

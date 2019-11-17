@@ -1,37 +1,33 @@
 <html>
   <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140137723-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140137723-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      gtag('config', 'UA-140137723-1');
+  
+      function promo(event) {
+      ga('send', 'event', {
+        eventCategory: 'Buttons',
+        eventAction: 'promo',
+        eventLabel: event.target.href
+      });
+    }
 
-  gtag('config', 'UA-140137723-1');
-
-  function promo(event) {
-  ga('send', 'event', {
-    eventCategory: 'Buttons',
-    eventAction: 'promo',
-    eventLabel: event.target.href
-  });
-}
-
-
-</script>
-
-
+    </script>
     <title>Mobile School Timer</title>
   </head>
   <body onload="defineTiming();">
-
+    
     <h1>
       School Timer Mobile
     </h1>
     <h2>
       Made by Luke Gutman 2019
     </h2>
-
+    
     <p class="periods" id="period1">1|</p> <p class="time" id="time1"></p> <br>
     <p class="periods" id="period2">2|</p> <p class="time" id="time2"></p> <br>
     <p class="periods" id="period3">3|</p> <p class="time" id="time3"></p> <br>
@@ -41,25 +37,23 @@
     <p class="periods" id="period7">7|</p> <p class="time" id="time7"></p> <br>
     <p class="periods" id="period8">8|</p> <p class="time" id="time8"></p> <br>
     <p class="periods" id="period9">9|</p> <p class="time" id="time9"></p> <br>
-
-
-
+    
     <p id="schedule">
       Schedule
     </p>
-
+    
      <button class="checkButton Abutton" id="Abutton" onclick="Apressed();">A</button>
      <button class="checkButton Bbutton" id="Bbutton" onclick="Bpressed();">B</button>
      <button class="checkButton Cbutton" id="Cbutton" onclick="Cpressed();">C</button>
      <button class="checkButton Dbutton" id="Dbutton" onclick="Dpressed();">D</button>
-
+  
   </body>
 </html>
 
 <script>
 
   var schedule = 'A';
-
+  
   function Apressed() {
     schedule = 'A';
     document.getElementById("Abutton").style.backgroundColor = "db3d3d";
@@ -93,8 +87,6 @@
     defineTiming();
   }
 
-
-
 var h1; var m1;
 var h2; var m2;
 var h3; var m3;
@@ -116,7 +108,7 @@ var displayPeriod8;
 var displayPeriod9;
 
 function defineTiming() {   //sets the variables of each period end time based on the schedule
-
+  
   if (schedule == 'A') {
     h1 = 8;  m1 = 29;
     h2 = 9;  m2 = 17;
@@ -168,7 +160,7 @@ function defineTiming() {   //sets the variables of each period end time based o
 
 function displayPeriods() {
   setTimeout(function () {
-
+    
     document.getElementById("time1").innerHTML = displayPeriod1;
     document.getElementById("time2").innerHTML = displayPeriod2;
     document.getElementById("time3").innerHTML = displayPeriod3;
@@ -178,7 +170,7 @@ function displayPeriods() {
     document.getElementById("time7").innerHTML = displayPeriod7;
     document.getElementById("time8").innerHTML = displayPeriod8;
     document.getElementById("time9").innerHTML = displayPeriod9;
-
+    
     displayPeriods();
   }, 0)
 }
@@ -190,7 +182,7 @@ var realSeconds;
   function pad(num) {
     return ("0" + parseInt(num)).substr(-2);
   }
-
+  
   function getRealSeconds() {
     var start = new Date;
     start.setHours(21, 0, 0);
@@ -203,7 +195,7 @@ var realSeconds;
     realSeconds = ss;
     setTimeout(getRealSeconds, 1000);
   }
-
+  
   function period1() {
     var start = new Date;
     start.setHours(h1, m1, 0);
@@ -215,7 +207,7 @@ var realSeconds;
     var hh = pad((remain / 60 / 60) % 60);
     var mm = pad((remain / 60) % 60);
      if (hh > 8) {
-      displayPeriod1 = "Over";
+      displayPeriod1 = "Over"; 
     } else {
     displayPeriod1 = hh + ":" + mm + ":" + realSeconds;
     }
@@ -357,7 +349,7 @@ function period9() {
     }
     setTimeout(period9, 100);
   }
-
+  
   displayPeriods();
   document.addEventListener('DOMContentLoaded', getRealSeconds);
   document.addEventListener('DOMContentLoaded', period1);
@@ -383,7 +375,7 @@ function period9() {
     padding-bottom:0px;
     margin-bottom:0px;
   }
-
+  
    h2 {
     color:Gray;
      font-style: italic;
@@ -393,11 +385,11 @@ function period9() {
      margin-top:0px;
      padding-top0px;
   }
-
+  
   body {
     background-color:black;
   }
-
+  
   #Abutton {
     background-color:db3d3d;
     width:125px;
@@ -409,9 +401,8 @@ function period9() {
     color:black;
      font-size: 4em;
      font-weight:bold;
-    touch-action: manipulation;
   }
-
+  
    #Bbutton, #Cbutton, #Dbutton {
     background-color:white;
     width:125px;
@@ -423,9 +414,8 @@ function period9() {
      color:black;
      font-size: 4em;
      font-weight:bold;
-     touch-action: manipulation;
   }
-
+  
   .periods {
     color:gray;
     font-weight:bold;
@@ -435,7 +425,7 @@ function period9() {
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
   }
-
+  
  .time {
     color:white;
     font-weight:bold;
@@ -445,7 +435,7 @@ function period9() {
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
   }
-
+  
   .label {
     color:white;
     font-size: 4em;
@@ -456,7 +446,7 @@ function period9() {
     margin-top: -50px;
      postiiton:static;
   }
-
+  
   #period9 {
     color:db3d3d;
   }
@@ -469,6 +459,5 @@ function period9() {
     font-size:5em;
     margin-bottom:5%;
   }
-
-
+  
 </style>
