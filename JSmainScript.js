@@ -28,7 +28,7 @@ refreshAt(7,40,0);
 //STAY AT TOP
 
 function middleTimer() {
-  window.location.href = 'http://middleschooltimer.glitch.me';
+  window.location.href = 'https://middleschooltimer.glitch.me';
 }
 
 
@@ -243,7 +243,7 @@ var up = document.getElementById("GFG_P");
                 a = true;
               var result = confirm("Looks like you are using a mobile device (Phone, Tablet, etc.). Do you want to switch to the mobile freindly version of School Timer?");
               if (result) {
-                  window.location.href = 'http://schooltimer.glitch.me/mobile.html';
+                  window.location.href = 'https://schooltimer.glitch.me/mobile.html';
               }
             } else { 
                 a = false; 
@@ -330,6 +330,7 @@ function weekendCalculate () {
   
   
   document.getElementById('untilWeekend').innerHTML = days + 'd ' + newHour + 'h ' + newMin + 'm ' + seconds + "s";
+  //document.getElementById('untilWeekend').innerHTML = "no joe";
 }
 
 
@@ -369,7 +370,7 @@ var x = setInterval(function() {
 }, 0);
 
 function stuff() {
-   var win = window.open("http://schooltimer.glitch.me/stuff.html", '_blank');
+   var win = window.open("https://schooltimer.glitch.me/stuff.html", '_blank');
    win.focus();
 }
 
@@ -1035,7 +1036,7 @@ function untilThanks (){
   var newHour = parseFloat(endHour);
   var newMin = parseFloat(endMin);
 
-  var countDownDate = new Date("Nov 27, 2019 15:53:00").getTime();
+  var countDownDate = new Date("Nov 27, 2019 13:00:00").getTime();
 
   var now = new Date().getTime();
 
@@ -1045,7 +1046,7 @@ function untilThanks (){
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-  document.getElementById("untilThanks").innerHTML = days + "d " + newHour + "h "  + newMin + "m " + seconds + "s ";
+  document.getElementById("untilThanks").innerHTML = days + "d " + hours + "h "  + minutes + "m " + seconds + "s";
 
   if (distance < 0) {
     clearInterval(untilThanks);
@@ -1765,7 +1766,7 @@ var check = function(){
 }
 
   function notes() {
-  window.location.href = 'http://schooltimer.glitch.me/releasenotes.html';
+  window.location.href = 'https://schooltimer.glitch.me/releasenotes.html';
 
   }
       var daysOfSchool = 284;
