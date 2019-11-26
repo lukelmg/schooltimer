@@ -1,10 +1,14 @@
+#legal {
+  display:inline-block;
+}
+
 canvas {
   display: block;
   position: absolute;
   zindex: 1;
   pointer-events: none;
   width: 200vw;
-  height: 100vh;
+  height: 5000px;
 }
 
 #continueButton {
