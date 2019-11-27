@@ -1,5 +1,5 @@
-:root {
-  --transitionTime: 0.4s;
+a:root {
+  --transitionTime: .5s;
 }
 
 #loadingScreen {

@@ -2,7 +2,7 @@
 
 function schooltimer() {
   hasLoadBefore();
-  Apressed();   //change to change schedule
+  Cpressed();   //change to change schedule
   
 }
 
@@ -28,7 +28,7 @@ refreshAt(7,40,0);
 //STAY AT TOP
 
 function middleTimer() {
-  window.location.href = 'https://middleschooltimerbeta.glitch.me';
+  window.location.href = 'https://middleschooltimer.glitch.me';
 }
 
 
@@ -243,7 +243,7 @@ var up = document.getElementById("GFG_P");
                 a = true;
               var result = confirm("Looks like you are using a mobile device (Phone, Tablet, etc.). Do you want to switch to the mobile freindly version of School Timer?");
               if (result) {
-                  window.location.href = 'https://schooltimerbeta.glitch.me/mobile.html';
+                  window.location.href = 'https://schooltimer.glitch.me/mobile.html';
               }
             } else { 
                 a = false; 
@@ -370,7 +370,7 @@ var x = setInterval(function() {
 }, 0);
 
 function stuff() {
-   var win = window.open("https://schooltimerbeta.glitch.me/stuff.html", '_blank');
+   var win = window.open("https://schooltimer.glitch.me/stuff.html", '_blank');
    win.focus();
 }
 
@@ -505,13 +505,6 @@ var isSoundOn = 0;
     }  
 }
   
-
-function readTabInput () {
-  var e = document.getElementById("selectTabTitle");
-  var tabPeriodMain = e.options[e.selectedIndex].text;
-}
-
-
 var h1 = 8;  var m1 = 29; //initial variables for A mode
 var h2 = 9;  var m2 = 17;
 var h3 = 10; var m3 = 5;
@@ -1013,15 +1006,15 @@ function ticke() { //fourth Period
   
   
     if (hh <= 24 && hh >= 8) {
-        document.getElementById('endText').innerHTML = 'School Is Over' ;
+        document.getElementById('endText').innerHTML = 'Fall Break Has Started!' ;
         schoolOver = 'yes';
         document.getElementById('time').innerHTML = " ";
-        document.title = "School Is Over"; 
+        document.title = "Fall Break is in Session!"; 
       
 
       timeDetecte = 0;
     } else {
-        document.getElementById('endText').innerHTML = "End of School In:" + "&nbsp";
+        document.getElementById('endText').innerHTML = "Fall Break Starts In:" + "&nbsp";
         document.getElementById('time').innerHTML =
             hh + ":" + mm + ":" + seconds;
        // document.title = hh + ":" + mm + ":" + seconds;
@@ -1773,13 +1766,9 @@ var check = function(){
 }
 
   function notes() {
-  window.location.href = 'https://schooltimerbeta.glitch.me/releasenotes.html';
+  window.location.href = 'https://schooltimer.glitch.me/releasenotes.html';
 
   }
-
-function legal() {
-  window.location.href = 'https://schooltimer.glitch.me/privacy-policy.html';
-}
       var daysOfSchool = 284;
   
   var daysWith;
@@ -1826,7 +1815,7 @@ var x = setInterval(function() {
 
 function setPresetValDefault() {
     background = '#101214'
-    accent = '#ff1c3e';
+    accent = '#ff7b00';
     text = 'white';
     sidebar = '#191B1F'
     sidebarTxt = 'white';
@@ -2039,11 +2028,11 @@ function setPresetValTerrible() {
 let canvas = document.getElementById('confetti');
 
 canvas.width = 1920;
-canvas.height = 1500;
+canvas.height = 1080;
 
 let ctx = canvas.getContext('2d');
 let pieces = [];
-let numberOfPieces = 100;
+let numberOfPieces = 50;
 let lastUpdateTime = Date.now();
 
 function randomColor () {
@@ -2088,7 +2077,7 @@ function draw () {
         ctx.translate(p.x + p.size / 2, p.y + p.size / 2);
         ctx.rotate(p.rotation);
 
-        ctx.fillRect(5, 5, 5, 5);
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
 
         ctx.restore();
     });
@@ -2103,7 +2092,7 @@ function Piece (x, y) {
     this.gravity = (Math.random() * 0.5 + 0.75) * 0.3;
     this.rotation = (Math.PI * 2) * Math.random();
     this.rotationSpeed = (Math.PI * 2) * (Math.random() - 0.5) * 0.001;
-    this.color = "white";
+    this.color = randomColor();
 }
 
 while (pieces.length < numberOfPieces) {
@@ -2115,7 +2104,6 @@ update();
 draw();
   numberOfPieces = numberOfPieces*1.1;
   if (numberOfPieces > 1000) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
     location.reload();
   }
 }
