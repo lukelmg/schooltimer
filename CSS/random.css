@@ -1,7 +1,15 @@
+#message{
+  float:right;
+  width: 10vw;
+  color:white;
+  text-align:right;
+  margin-right: 1vw;
+}
+
 canvas {
   display: block;
   position: absolute;
-  zindex: 1;
+  zindex: 2;
   pointer-events: none;
   width: 200vw;
   height: 100vh;

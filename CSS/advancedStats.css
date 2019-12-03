@@ -4,12 +4,12 @@
   width: 27vh;
   height: 100%;
   margin-right: 0px;
-  z-index: 1;
+  z-index: 5;
   background-color: 191b1f;
   color: white;
   transition: all 0.15s ease-in-out;
   box-shadow: -10px 10px 10px -10px black;
-  margin-right: -20vw;
+  margin-right: -30vw;
   margin-top: 0vh;
   margin-bottom: 1vh;
   padding-left: 10px;
@@ -25,6 +25,7 @@
   margin-bottom: 10px;
   height: 9% ;
   vertical-align: middle;
+  z-index:6;
 }
 
 .likeText {

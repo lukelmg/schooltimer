@@ -2,7 +2,7 @@
 
 function schooltimer() {
   hasLoadBefore();
-  Apressed();   //change to change schedule
+  Bpressed();   //change to change schedule
   confet();
 }
 
@@ -250,18 +250,18 @@ var up = document.getElementById("GFG_P");
             }
             up.innerHTML = a; 
         } 
-document.getElementById("advancedStats").style.display = "-20vw";
+document.getElementById("advancedStats").style.display = "-30vw";
 
 
 var outState = 0;
 function moreStatsOut() {
   
   if (outState == 1) {
- document.getElementById("advancedStats").style.marginRight = "-20vw";
+ document.getElementById("advancedStats").style.marginRight = "-50vw";
    outState = 0; 
   } else {
     if (outState == 0) {
-    document.getElementById("advancedStats").style.marginRight = "10px";
+    document.getElementById("advancedStats").style.marginRight = "-10vw";
       outState = 1;
     }
   }
@@ -633,6 +633,16 @@ if (keyVar == 'off') {
         h6 = 12; m6 = 32;
         h7 = 13; m7 = 19;
         h8 = 14; m8 = 6;
+        he = 14; me = 53;
+      
+        h1 = 8;  m1 = 29;
+        h2 = 9;  m2 = 17;
+        h3 = 10; m3 = 5;
+        h4 = 10; m4 = 45;
+        h5 = 11; m5 = 25;
+        h6 = 12; m6 = 5;
+        h7 = 12; m7 = 45;
+        h8 = 13; m8 = 49;
         he = 14; me = 53;
     }
     if (schedule == 'C') {
@@ -1292,6 +1302,8 @@ function setElementsAsValues () {
           document.getElementById("title").style.color = accent;
           document.getElementById("myprogressBar").style.backgroundColor = accent;
   
+   document.getElementById("message").style.color = text;
+  
   
   var advancedStatTextColor = document.getElementsByClassName("timeValueAdvanced");
   var stat = document.getElementsByClassName("stat");
@@ -1520,6 +1532,8 @@ var radioColor = 'white';
             document.getElementById("sixthEndText").style.color = hex1;
             document.getElementById("seventhEndText").style.color = hex1;
             document.getElementById("eighthEndText").style.color = hex1;
+           
+            document.getElementById("message").style.color = hex1;
 
             document.getElementById("firstEnd").style.color = hex1; //actual times
             document.getElementById("secondEnd").style.color = hex1;
@@ -2032,7 +2046,7 @@ canvas.height = 1500;
 
 let ctx = canvas.getContext('2d');
 let pieces = [];
-let numberOfPieces = 100;
+let numberOfPieces = 50;
 let lastUpdateTime = Date.now();
 
 function randomColor () {
