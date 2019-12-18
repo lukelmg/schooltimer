@@ -1,5 +1,5 @@
 .tabTitleButton {
-  margin-top: -20px;
+  margin-top: -15px;
   padding: 0px 10px 0px 10px;
   font-size: 2.5vh;
   color: #fff;
@@ -10,7 +10,7 @@
   border: none;
   background-size: 300% 100%;
   border-radius: 5px;
-  background-color: #2B2F36;
+  background-color: #343536;
    width:10vw;
   moz-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
@@ -36,7 +36,7 @@
   border: none;
   background-size: 300% 100%;
   border-radius: 5px;
-  background-color: #2B2F36;
+  background-color: #343536;
   moz-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
@@ -105,13 +105,13 @@
   border: none;
   background-size: 300% 100%;
   border-radius: 5px;
-  background-color: #2B2F36;
+  background-color: #343536;
    width:10vw;
   moz-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.1s ease-in-out;
-  background-color: #2B2F36;
+  background-color: #343536;
   outline: 0 none;
 }
 
@@ -135,13 +135,13 @@
   border: none;
   background-size: 300% 100%;
   border-radius: 5px;
-  background-color: #2B2F36;
+  background-color: #343536;
    width:10vw;
   moz-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.1s ease-in-out;
-  background-color: #2B2F36;
+  background-color: #343536;
   outline: 0 none;
 }
 

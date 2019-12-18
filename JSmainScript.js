@@ -2,7 +2,7 @@
 
 function schooltimer() {
   hasLoadBefore();
-  Dpressed();   //change to change schedule
+  Apressed();   //change to change schedule
   confet();
 }
 
@@ -312,6 +312,8 @@ function weekendCalculate () {
       }
     }
   }
+  
+  newHour = newHour +24;
   
   var days = newHour / 24;
   days = Math.trunc(days);
@@ -1815,12 +1817,12 @@ var x = setInterval(function() {
 
 function setPresetValDefault() {
     background = '#101214'
-    accent = '#ff1c3e';
+    accent = '#1CFF77';
     text = 'white';
-    sidebar = '#191B1F'
+    sidebar = '#E30022'
     sidebarTxt = 'white';
     buttonTxtPres = 'white';
-    settingDpres = '#2B2F36';
+    settingDpres = '#343536';
     settingDTxtpres = 'white';
     settingEpres = '#626978';
     settingETxtpres = 'white';
