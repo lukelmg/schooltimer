@@ -2,7 +2,7 @@
 
 function schooltimer() {
   hasLoadBefore();
-  Apressed();   //change to change schedule
+  Bpressed();   //change to change schedule
   confet();
 }
 
@@ -627,14 +627,14 @@ if (keyVar == 'off') {
       
     }
     if (schedule == 'B') {
-        h1 = 8;  m1 = 37;
-        h2 = 9;  m2 = 24;
-        h3 = 10; m3 = 11;
-        h4 = 10; m4 = 58;
-        h5 = 11; m5 = 45;
-        h6 = 12; m6 = 32;
-        h7 = 13; m7 = 19;
-        h8 = 14; m8 = 6;
+        h1 = 10;  m1 = 4;
+        h2 = 10;  m2 = 38;
+        h3 = 11; m3 = 12;
+        h4 = 11; m4 = 46;
+        h5 = 12; m5 = 20;
+        h6 = 12; m6 = 54;
+        h7 = 13; m7 = 28;
+        h8 = 14; m8 = 12;
         he = 14; me = 53;
     }
     if (schedule == 'C') {
@@ -1189,6 +1189,8 @@ function winterBreak (){
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  
+  days = days - 1;
 
   document.getElementById("winterBreak").innerHTML = days + "d " + hours + "h "  + minutes + "m " + seconds + "s ";
 

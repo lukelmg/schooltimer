@@ -1,3 +1,10 @@
+#like {
+  float:right;
+  marign-right: 1vw;
+  padding-right: 1vw;
+  color:white;
+}
+
 canvas {
   display: block;
   position: absolute;

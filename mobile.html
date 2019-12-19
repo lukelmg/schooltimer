@@ -19,7 +19,7 @@
     </script>
     <title>Mobile School Timer</title>
   </head>
-  <body onload="defineTiming();">
+  <body onload="defineTiming(); Bpressed();">
     
     <h1>
       School Timer Mobile
@@ -38,19 +38,36 @@
     <p class="periods" id="period8">8|</p> <p class="time" id="time8"></p> <br>
     <p class="periods" id="period9">9|</p> <p class="time" id="time9"></p> <br>
     
+    
+    <button class="checkButton ConSchedule" id="conSchedule" onclick="concert()">
+      12/20 Schedule Times
+    </button>
+    
+    
     <p id="schedule">
       Schedule
     </p>
+    <h2 id="message">
+      Schedule B is adjusted for 12/20
+    </h2>
     
      <button class="checkButton Abutton" id="Abutton" onclick="Apressed();">A</button>
      <button class="checkButton Bbutton" id="Bbutton" onclick="Bpressed();">B</button>
      <button class="checkButton Cbutton" id="Cbutton" onclick="Cpressed();">C</button>
      <button class="checkButton Dbutton" id="Dbutton" onclick="Dpressed();">D</button>
+    
+    <br>
   
   </body>
 </html>
 
 <script>
+  
+  function concert () {
+    
+    alert("12/20 Concert Schedule \n \n Period 1 | 7:40-10:04 \n Concert 1 | 7:54-8:47 \n Concert 2 | 9:07-10:04 \n Period 2 | 10:08-10:38 \n Period 3 | 10:42-11:12 \n Period 4 | 11:16-11:46 \n Period 5 | 11:50-12:20 \n Period 6 | 12:24-12:54 \n Period 7 | 12:58-1:28 \n Period 8 | 1:32:2:12 \n Period 9 | 2:16-2:53");
+    
+  }
 
   var schedule = 'A';
   
@@ -130,6 +147,16 @@ function defineTiming() {   //sets the variables of each period end time based o
       h7 = 13; m7 = 19;
       h8 = 14; m8 = 6;
       h9 = 14; m9 = 53;
+      
+        h1 = 10;  m1 = 4;
+        h2 = 10;  m2 = 38;
+        h3 = 11; m3 = 12;
+        h4 = 11; m4 = 46;
+        h5 = 12; m5 = 20;
+        h6 = 12; m6 = 54;
+        h7 = 13; m7 = 28;
+        h8 = 14; m8 = 12;
+        he = 14; me = 53;
     } else {
       if (schedule == 'C') {
         h1 = 8;  m1 = 22;
@@ -457,7 +484,30 @@ function period9() {
     font-weight:Bold;
     font-family:Arial;
     font-size:5em;
-    margin-bottom:5%;
+    margin-bottom:10px;
+  }
+  
+  
+    #conSchedule {
+    background-color:white;
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px;
+    border:none;
+    margin-right:5%;
+    outline:none;
+    color:black;
+    font-size: 4em;
+    font-weight:bold;
+    margin-top: 30px;
+      
+      border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  }
+  
+  #message {
+    margin-top:0px;
   }
   
 </style>
