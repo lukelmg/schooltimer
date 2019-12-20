@@ -48,20 +48,20 @@ function crazy() {
 }
 
 var delay = 0;
-var borw = 0; 
+var borw = 0;
 
 function changeColor() {
     delay++;
-     
+
     if (delay > 7) {
       if (borw == 0) {
          document.body.style.backgroundColor = "white";
         borw = 1;
       } else {
            document.body.style.backgroundColor = "black";
-        
+
           borw = 0;
-        
+
       }
         delay = 0;
     }
@@ -69,8 +69,8 @@ function changeColor() {
 }
 
 $(document).keydown(function(e){
-  
-  
+
+
   if (e.which == 49) {
    one = one + 1;
   }
@@ -84,12 +84,12 @@ $(document).keydown(function(e){
     crazy();
   }
 
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
    if ((e.metaKey || e.ctrlKey) && (e.metaKey || e.shiftKey) && ( String.fromCharCode(e.which).toLowerCase() === 'l') ) {
      if (lunchMode == 'off') {
        lunchMode = 'on';
@@ -99,13 +99,13 @@ $(document).keydown(function(e){
        }
      }
    }
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
     if ((e.metaKey || e.ctrlKey) && ( String.fromCharCode(e.which).toLowerCase() === 'x') ) {
       if (developerMode = 'off'){
       developerMode = 'on';
@@ -115,13 +115,13 @@ $(document).keydown(function(e){
         alert("You have exited developer mode.")
       }
     }
-  
-  
+
+
   if  (developerMode == 'on'){
   if (e.which == 37) {
        rotation = rotation + 20;
       updateTransform();
-      
+
        return false;
     } else {
       if (e.which == 39) {
@@ -136,7 +136,7 @@ $(document).keydown(function(e){
       } else {
         if (e.which == 40) {
           transformY = transformY - 20;
-          updateTransform();          
+          updateTransform();
           return false;
         } else {
           if (e.which == 69) {
@@ -215,8 +215,8 @@ function hasLoadBefore() {
    document.getElementById("continueButton").style.display = "none";
   unloadQuick();
  }
-  
-  
+
+
 }
 
 function loadSurvey (){
@@ -228,37 +228,37 @@ function loadSurvey (){
 
 
 
-var a = ''; 
-var up = document.getElementById("GFG_P"); 
-  
-        function mobile() { 
-  
-            if (navigator.userAgent.match(/Android/i) 
-                || navigator.userAgent.match(/webOS/i) 
-                || navigator.userAgent.match(/iPhone/i)  
-                || navigator.userAgent.match(/iPad/i)  
-                || navigator.userAgent.match(/iPod/i) 
-                || navigator.userAgent.match(/BlackBerry/i) 
-                || navigator.userAgent.match(/Windows Phone/i)) { 
+var a = '';
+var up = document.getElementById("GFG_P");
+
+        function mobile() {
+
+            if (navigator.userAgent.match(/Android/i)
+                || navigator.userAgent.match(/webOS/i)
+                || navigator.userAgent.match(/iPhone/i)
+                || navigator.userAgent.match(/iPad/i)
+                || navigator.userAgent.match(/iPod/i)
+                || navigator.userAgent.match(/BlackBerry/i)
+                || navigator.userAgent.match(/Windows Phone/i)) {
                 a = true;
               var result = confirm("Looks like you are using a mobile device (Phone, Tablet, etc.). Do you want to switch to the mobile freindly version of School Timer?");
               if (result) {
                   window.location.href = 'https://schooltimer.glitch.me/mobile.html';
               }
-            } else { 
-                a = false; 
+            } else {
+                a = false;
             }
-            up.innerHTML = a; 
-        } 
+            up.innerHTML = a;
+        }
 document.getElementById("advancedStats").style.display = "-20vw";
 
 
 var outState = 0;
 function moreStatsOut() {
-  
+
   if (outState == 1) {
  document.getElementById("advancedStats").style.marginRight = "-20vw";
-   outState = 0; 
+   outState = 0;
   } else {
     if (outState == 0) {
     document.getElementById("advancedStats").style.marginRight = "10px";
@@ -276,7 +276,7 @@ function weekendCalculate () {
   var dt = new Date(currentDateToday);
 
   var newDt = String(dt);
-  
+
   var sunday = newDt.includes("Sun");
   var monday = newDt.includes("Mon");
   var tuesday = newDt.includes("Tue");
@@ -312,16 +312,16 @@ function weekendCalculate () {
       }
     }
   }
-  
+
   newHour = newHour +24;
-  
+
   var days = newHour / 24;
   days = Math.trunc(days);
-  
+
   var hourInDays = days * 24;
-  
+
   newHour = newHour - hourInDays
-  
+
   if (schoolOver == 'yes') {
     newHour = newHour - 24;
   }
@@ -329,15 +329,15 @@ function weekendCalculate () {
   newHour = newHour * -1;
     newHour = 24-newHour;
   }
-  
-  
+
+
   document.getElementById('untilWeekend').innerHTML = days + 'd ' + newHour + 'h ' + newMin + 'm ' + seconds + "s";
   //document.getElementById('untilWeekend').innerHTML = "no joe";
 }
 
 
 
-  
+
 //alert(sunday + "\n" + monday + "\n" + tuesday + "\n" + wednesday + "\n" + thursday + "\n" + friday + "\n" + saturday);
 
 
@@ -351,7 +351,7 @@ function weekendCalculate () {
 var countDownDate = new Date("Jun 16, 2020 15:37:25").getTime();
 
 var x = setInterval(function() {
-  
+
   var now = new Date().getTime();
   var distance = countDownDate - now;
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -360,9 +360,9 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   var weeks = days / 7;
-  
+
   weeks = Math.round(weeks);
-  
+
   document.getElementById("getDate").innerHTML = weeks
 
   if (distance < 0) {
@@ -388,7 +388,7 @@ styleElem.innerHTML = "#sliderTab2:before {background-color: blue;}";
 var colorCount = 0;
 var onoff = 0;
 function moveColor()
-{ 
+{
 
   if (onoff == 0) {
   document.getElementById("mydiv").style.top = "2%";
@@ -411,7 +411,7 @@ function date() {
 }
 
 
-var keyVar = 'off'; 
+var keyVar = 'off';
 
 
 window.document.onkeydown = function(e) {
@@ -430,7 +430,7 @@ var opp = 1;
 function fadeOutEffect() {
     var fadeTarget = document.getElementById("alertOverlay");
     var fadeEffect = setInterval(function () {
-     
+
         if (!fadeTarget.style.opacity) {
             fadeTarget.style.opacity = 1;
         }
@@ -446,7 +446,7 @@ function fadeOutEffect() {
 function lunchFadeOutEffect() {
     var fadeTarget = document.getElementById("lunchAlertOverlay");
     var fadeEffect = setInterval(function () {
-     
+
         if (!fadeTarget.style.opacity) {
             fadeTarget.style.opacity = 1;
         }
@@ -472,41 +472,41 @@ function wait() {
 var isLunchOn = 0;
 var isSoundOn = 0;
   function lunch() {
-    
-       
+
+
     if (isSoundOn == 0) {
       document.getElementById("lunchModebutton").style.backgroundColor = Asidebar;
       document.getElementById("lunchModebutton").style.color = settingTxtE;
       document.getElementById("lunchAlertText").innerHTML = "Sounds On";
-      
+
         opp = 1;
         document.getElementById("lunchAlertOverlay").style.opacity = opp;
        setTimeout(function (){
 
        lunchFadeOutEffect();
 
-        }, 1000); 
+        }, 1000);
      isSoundOn = 1;
     } else {
       if (isSoundOn == 1) {
        // alert("lunch is off");
         isSoundOn = 0;
-        
+
         document.getElementById("lunchModebutton").style.backgroundColor = Dsidebar;
         document.getElementById("lunchModebutton").style.color = settingTxtD;
-     
+
       document.getElementById("lunchAlertText").innerHTML = "Sounds Off";
        document.getElementById("lunchAlertOverlay").style.opacity = 1;
          setTimeout(function (){
 
         lunchFadeOutEffect();
 
-      }, 1000); 
-        
+      }, 1000);
+
       }
-    }  
+    }
 }
-  
+
 var h1 = 8;  var m1 = 29; //initial variables for A mode
 var h2 = 9;  var m2 = 17;
 var h3 = 10; var m3 = 5;
@@ -539,35 +539,35 @@ var seconds;
 var schedule = 'A';
 
   var scheduleSelectColor = '#40444F';
-  
+
 function Apressed()
   {
     schedule = 'A';
     setTheSchedule();
-    
+
      document.getElementById("Adiv").style.opacity = 1;
      document.getElementById("Bdiv").style.opacity = 0;
      document.getElementById("Cdiv").style.opacity = 0;
      document.getElementById("Ddiv").style.opacity = 0;
-    
+
      document.getElementById("buttonA").style.backgroundColor = scheduleSelectColor;
      document.getElementById("buttonB").style.backgroundColor = radioColor;
      document.getElementById("buttonC").style.backgroundColor = radioColor;
      document.getElementById("buttonD").style.backgroundColor = radioColor;
-    
+
 
   }
 function Bpressed()
   {
     schedule = 'B';
     setTheSchedule();
-    
+
      document.getElementById("Adiv").style.opacity = 0;
      document.getElementById("Bdiv").style.opacity = 1;
      document.getElementById("Cdiv").style.opacity = 0;
      document.getElementById("Ddiv").style.opacity = 0;
-    
-    
+
+
      document.getElementById("buttonA").style.backgroundColor = radioColor;
      document.getElementById("buttonB").style.backgroundColor = scheduleSelectColor;
      document.getElementById("buttonC").style.backgroundColor = radioColor;
@@ -579,13 +579,13 @@ function Cpressed()
   {
     schedule = 'C';
     setTheSchedule();
-    
-    
+
+
       document.getElementById("Adiv").style.opacity = 0;
      document.getElementById("Bdiv").style.opacity = 0;
      document.getElementById("Cdiv").style.opacity = 1;
      document.getElementById("Ddiv").style.opacity = 0;
-    
+
      document.getElementById("buttonA").style.backgroundColor = radioColor;
      document.getElementById("buttonB").style.backgroundColor = radioColor;
      document.getElementById("buttonC").style.backgroundColor =  scheduleSelectColor;
@@ -596,13 +596,13 @@ function Dpressed()
   {
     schedule = 'D';
     setTheSchedule();
-    
-    
+
+
       document.getElementById("Adiv").style.opacity = 0;
      document.getElementById("Bdiv").style.opacity = 0;
      document.getElementById("Cdiv").style.opacity = 0;
      document.getElementById("Ddiv").style.opacity = 1;
-    
+
      document.getElementById("buttonA").style.backgroundColor = radioColor;
      document.getElementById("buttonB").style.backgroundColor = radioColor;
      document.getElementById("buttonC").style.backgroundColor = radioColor;
@@ -614,7 +614,7 @@ function setTheSchedule() {
 if (keyVar == 'off') {
   if (lunchMode == "off") {
     if (schedule == 'A') {
-      
+
         h1 = 8;  m1 = 29;
         h2 = 9;  m2 = 17;
         h3 = 10; m3 = 5;
@@ -624,9 +624,19 @@ if (keyVar == 'off') {
         h7 = 13; m7 = 17;
         h8 = 14; m8 = 5;
         he = 14; me = 53;
-      
+
     }
     if (schedule == 'B') {
+      h1 = 8;  m1 = 37;
+      h2 = 9;  m2 = 24;
+      h3 = 10; m3 = 11;
+      h4 = 10; m4 = 58;
+      h5 = 11; m5 = 45;
+      h6 = 12; m6 = 32;
+      h7 = 13; m7 = 19;
+      h8 = 14; m8 = 6;
+      h9 = 14; m9 = 53;
+
         h1 = 10;  m1 = 4;
         h2 = 10;  m2 = 38;
         h3 = 11; m3 = 12;
@@ -667,9 +677,9 @@ if (keyVar == 'off') {
 function playSoundTick() {
    var click1 = document.getElementById("click1");
     var click2 = document.getElementById("click2");
-  
+
   if (schoolOver == 'yes') {
-    
+
   } else {
     if (flipflop == 0) {
       click1.play();
@@ -685,7 +695,7 @@ function playSoundTick() {
 
 function pad(num) {
     return ("0" + parseInt(num)).substr(-2);
-} 
+}
 
 function tick1() { //first Period
     var start = new Date;
@@ -793,7 +803,7 @@ function tick4() { //fourth Period
     setTheSchedule();
   }
   if (lunchMode == 'on') {
-   document.getElementById("fourthEndText").innerHTML = "Period 4 Lunch Ends In:" + "&nbsp"; 
+   document.getElementById("fourthEndText").innerHTML = "Period 4 Lunch Ends In:" + "&nbsp";
  } else {
     document.getElementById("fourthEndText").innerHTML = "Period 4 Ends In:" + "&nbsp";
   }
@@ -801,14 +811,14 @@ function tick4() { //fourth Period
     document.getElementById('fourthEnd').innerHTML = hh + ":" + mm + ":" + seconds;
     timeDetect4 = 1;
     if (tabControl == 'on' && timeDetect3 == 0) {
-     document.title = hh + ":" + mm + ":" + seconds; 
+     document.title = hh + ":" + mm + ":" + seconds;
     }
   } else {
     document.getElementById('fourthEnd').innerHTML = ' ';
     if (lunchMode == 'off') {
-    document.getElementById("fourthEndText").innerHTML = "Period 4 Is Over"; 
+    document.getElementById("fourthEndText").innerHTML = "Period 4 Is Over";
     } else {
-        document.getElementById("fourthEndText").innerHTML = "Period 4 Lunch Is Over"; 
+        document.getElementById("fourthEndText").innerHTML = "Period 4 Lunch Is Over";
     }
     timeDetect4 = 0;
   }
@@ -841,7 +851,7 @@ function tick5() { //fourth Period
     setTheSchedule();
   }
   if (lunchMode == 'on') {
-   document.getElementById("fifthEndText").innerHTML = "Period 5 Lunch Ends In:" + "&nbsp"; 
+   document.getElementById("fifthEndText").innerHTML = "Period 5 Lunch Ends In:" + "&nbsp";
  } else {
     document.getElementById("fifthEndText").innerHTML = "Period 5 Ends In:" + "&nbsp";
   }
@@ -849,14 +859,14 @@ function tick5() { //fourth Period
     document.getElementById('fifthEnd').innerHTML = hh + ":" + mm + ":" + seconds;
       timeDetect5 = 1;
     if (tabControl == 'on' && timeDetect4 == 0) {
-     document.title = hh + ":" + mm + ":" + seconds; 
+     document.title = hh + ":" + mm + ":" + seconds;
     }
   } else {
     document.getElementById('fifthEnd').innerHTML = ' ';
     if (lunchMode == 'off') {
-    document.getElementById("fifthEndText").innerHTML = "Period 5 Is Over"; 
+    document.getElementById("fifthEndText").innerHTML = "Period 5 Is Over";
     } else {
-       document.getElementById("fifthEndText").innerHTML = "Period 5 Lunch Is Over";  
+       document.getElementById("fifthEndText").innerHTML = "Period 5 Lunch Is Over";
     }
     timeDetect5 = 0;
   }
@@ -892,7 +902,7 @@ function tick6() { //fourth Period
 		mm = mm - 3;
 	}
   if (lunchMode == 'on') {
-   document.getElementById("sixthEndText").innerHTML = "Period 6 Lunch Ends In:" + "&nbsp"; 
+   document.getElementById("sixthEndText").innerHTML = "Period 6 Lunch Ends In:" + "&nbsp";
  } else {
     document.getElementById("sixthEndText").innerHTML = "Period 6 Ends In:" + "&nbsp";
   }
@@ -900,14 +910,14 @@ function tick6() { //fourth Period
     document.getElementById('sixthEnd').innerHTML = hh + ":" + mm + ":" + seconds;
     timeDetect6 = 1;
     if (tabControl == 'on' && timeDetect5 == 0) {
-     document.title = hh + ":" + mm + ":" + seconds; 
+     document.title = hh + ":" + mm + ":" + seconds;
     }
   } else {
     document.getElementById('sixthEnd').innerHTML = ' ';
     if (lunchMode == 'off') {
-    document.getElementById("sixthEndText").innerHTML = "Period 6 Is Over"; 
+    document.getElementById("sixthEndText").innerHTML = "Period 6 Is Over";
     } else {
-    document.getElementById("sixthEndText").innerHTML = "Period 6 Lunch Is Over";  
+    document.getElementById("sixthEndText").innerHTML = "Period 6 Lunch Is Over";
     }
     timeDetect6 = 0;
   }
@@ -943,7 +953,7 @@ function tick7() { //fourth Period
 		mm = mm - 3;
 	}
    if (lunchMode == 'on') {
-   document.getElementById("seventhEndText").innerHTML = "Period 7 Lunch Ends In:" + "&nbsp"; 
+   document.getElementById("seventhEndText").innerHTML = "Period 7 Lunch Ends In:" + "&nbsp";
  } else {
     document.getElementById("seventhEndText").innerHTML = "Period 7 Ends In:" + "&nbsp";
   }
@@ -951,14 +961,14 @@ function tick7() { //fourth Period
     document.getElementById('seventhEnd').innerHTML = hh + ":" + mm + ":" + seconds;
     timeDetect7 = 1;
     if (tabControl == 'on' && timeDetect6 == 0) {
-     document.title = hh + ":" + mm + ":" + seconds; 
+     document.title = hh + ":" + mm + ":" + seconds;
     }
   } else {
     document.getElementById('seventhEnd').innerHTML = ' ';
      if (lunchMode == 'off') {
-    document.getElementById("seventhEndText").innerHTML = "Period 7 Is Over"; 
+    document.getElementById("seventhEndText").innerHTML = "Period 7 Is Over";
      } else {
-      document.getElementById("seventhEndText").innerHTML = "Period 7 Lunch Is Over";   
+      document.getElementById("seventhEndText").innerHTML = "Period 7 Lunch Is Over";
      }
     timeDetect7 = 0;
   }
@@ -1002,17 +1012,17 @@ function ticke() { //fourth Period
     var remain = ((start - now) / 1000);
     var hh = pad((remain / 60 / 60) % 60);
     var mm = pad((remain / 60) % 60);
-    
+
     endHour = hh;
     endMin = mm;
-  
-  
+
+
     if (hh <= 24 && hh >= 8) {
         document.getElementById('endText').innerHTML = 'School Is Over' ;
         schoolOver = 'yes';
         document.getElementById('time').innerHTML = " ";
-        document.title = "School Is Over"; 
-      
+        document.title = "School Is Over";
+
 
       timeDetecte = 0;
     } else {
@@ -1024,7 +1034,7 @@ function ticke() { //fourth Period
        if (tabControl == 'on' && timeDetect8 == 0)
       {
         document.title = hh + ":" + mm + ":" + seconds;
-      } 
+      }
           if (tabControl == 'off'){
         document.title =  hh + ":" + mm + ":" + seconds;
       }
@@ -1034,7 +1044,7 @@ function ticke() { //fourth Period
 
 
 function untilThanks (){
-  
+
   var newHour = parseFloat(endHour);
   var newMin = parseFloat(endMin);
 
@@ -1057,7 +1067,7 @@ function untilThanks (){
 }
 
 function quarter2 (){
-  
+
   var newHour = parseFloat(endHour);
   var newMin = parseFloat(endMin);
 
@@ -1081,7 +1091,7 @@ function quarter2 (){
 
 
 function quarter3 (){
-  
+
   var newHour = parseFloat(endHour);
   var newMin = parseFloat(endMin);
 
@@ -1106,7 +1116,7 @@ function quarter3 (){
 
 
 function quarter4 (){
-  
+
   var newHour = parseFloat(endHour);
   var newMin = parseFloat(endMin);
 
@@ -1130,7 +1140,7 @@ function quarter4 (){
 
 
 function schoolEnd (){
-  
+
   var newHour = parseFloat(endHour);
   var newMin = parseFloat(endMin);
 
@@ -1154,7 +1164,7 @@ function schoolEnd (){
 
 
 function seniorEnd (){
-  
+
   var newHour = parseFloat(endHour);
 
   var countDownDate = new Date("Jun 4, 2020 10:30:00").getTime();
@@ -1177,7 +1187,7 @@ function seniorEnd (){
 
 
 function winterBreak (){
-  
+
   var newHour = parseFloat(endHour);
 
   var countDownDate = new Date("Dec 21, 2019 14:53:00").getTime();
@@ -1189,7 +1199,7 @@ function winterBreak (){
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  
+
   days = days - 1;
 
   document.getElementById("winterBreak").innerHTML = days + "d " + hours + "h "  + minutes + "m " + seconds + "s ";
@@ -1202,15 +1212,15 @@ function winterBreak (){
 
 
 
-                           
-                           
-                           
+
+
+
 function repeat() {
     tick1(); tick2(); tick3(); tick4(); tick5(); tick6(); tick7(); tick8(); ticke();
    quarter2(); quarter3(); quarter4(); schoolEnd(); seniorEnd(); untilThanks();
-  
+
   date();  weekendCalculate(); winterBreak();
-  
+
     document.addEventListener('DOMContentLoaded', tick1);
     document.addEventListener('DOMContentLoaded', tick2);
     document.addEventListener('DOMContentLoaded', tick3);
@@ -1220,7 +1230,7 @@ function repeat() {
     document.addEventListener('DOMContentLoaded', tick7);
     document.addEventListener('DOMContentLoaded', tick8);
     document.addEventListener('DOMContentLoaded', ticke);
-    
+
     setTimeout(repeat, 1000);
 } repeat();//timeouts for each tick
 var iro;
@@ -1233,14 +1243,14 @@ function selectColorElement() {
   element = document.getElementById("colorOptions").value;
 }
 
-  
+
 var hex1; var hex2; var hex3; var hex4; var hex5; var hex6;
-  
+
 var colorPicker = new iro.ColorPicker("#color-picker-container", {
   width: 150,
   color: "#fff"
 });
-  
+
   values = document.getElementById("values");
 
 colorPicker.on(["color:init", "color:change"], function(color){
@@ -1265,26 +1275,26 @@ colorPicker.on(["color:init", "color:change"], function(color){
   var settingETxtpres;
   var radioExtra;
   var radioDiv;
-  
+
 
 
 function setElementsAsValues () {
           Dsidebar = settingDpres;
           settingTxtD = settingDTxtpres;
-  
+
           Asidebar = settingEpres;
           settingTxtE = settingETxtpres;
-  
+
           buttonColorChange();
-         
+
           buttonTxtColorChange();
-          
+
           document.body.style.backgroundColor = background;
-   
+
           document.getElementById("Progress_Status").style.backgroundColor = settingDpres;
-  
-       
-  
+
+
+
           document.getElementById("endText").style.color = accent;
           document.getElementById("time").style.color = accent;
          // document.getElementById("video").style.backgroundColor = accent;
@@ -1292,15 +1302,15 @@ function setElementsAsValues () {
           document.getElementById("feature").style.backgroundColor = settingDpres;
    //document.getElementById("moreStats").style.backgroundColor = "green";
         document.getElementById("middleTimer").style.backgroundColor = settingDpres;
-       
+
           document.getElementById("title").style.color = accent;
           document.getElementById("myprogressBar").style.backgroundColor = accent;
-  
-  
+
+
   var advancedStatTextColor = document.getElementsByClassName("timeValueAdvanced");
   var stat = document.getElementsByClassName("stat");
   document.getElementById("advancedStats").style.backgroundColor = sidebar;
-  
+
 for (var i = 0; i < advancedStatTextColor.length; i++) {
     advancedStatTextColor[i].style.color = accent;
 }
@@ -1308,11 +1318,11 @@ for (var i = 0; i < advancedStatTextColor.length; i++) {
     stat[i].style.backgroundColor = background;
     stat[i].style.color = text;
 }
-  
 
-  
+
+
 //       document.getElementById("untilThanks").style.color = accent;
-  
+
             document.getElementById("firstEndText").style.color = text; //time text
             document.getElementById("secondEndText").style.color = text;
             document.getElementById("thirdEndText").style.color = text;
@@ -1331,13 +1341,13 @@ for (var i = 0; i < advancedStatTextColor.length; i++) {
             document.getElementById("eighthEnd").style.color = text;
             document.getElementById("like").style.color = text;
             document.getElementById("copy").style.color = text;
-  
+
             document.getElementById("versionNumber").style.color = text;
             document.getElementById("myName").style.color = text;
-  
+
             document.getElementById("dayContainer").style.backgroundColor = sidebar;
             document.getElementById("yearContainer").style.backgroundColor = sidebar;
-    
+
                    document.getElementById("schoolScheduleTxt").style.color = sidebarTxt;
                    document.getElementById("tabTxt").style.color = sidebarTxt;
                    //document.getElementById("lunchTxt").style.color = sidebarTxt;
@@ -1348,26 +1358,26 @@ for (var i = 0; i < advancedStatTextColor.length; i++) {
                    document.getElementById("getDate").style.color = sidebarTxt;
                    document.getElementById("endYearTxt").style.color = sidebarTxt;
                    document.getElementById("progressPercent").style.color = sidebarTxt;
-  
-  
+
+
                document.getElementById("Adiv").style.backgroundColor = radioDiv;
                document.getElementById("Bdiv").style.backgroundColor = radioDiv;
                document.getElementById("Cdiv").style.backgroundColor = radioDiv;
                document.getElementById("Ddiv").style.backgroundColor = radioDiv;
-  
-  
+
+
     document.getElementById("feature").style.backgroundColor = settingDpres;
   document.getElementById("feature").style.color = settingDTxtpres;
-  
+
    // document.getElementById("moreStats").style.backgroundColor = settingDpres;
   //document.getElementById("moreStats").style.color = settingDTxtpres;
-  
+
     document.getElementById("middleTimer").style.backgroundColor = settingDpres;
   document.getElementById("middleTimer").style.color = settingDTxtpres;
-  
+
           document.getElementById("myBtn").style.backgroundColor = settingDpres;
           document.getElementById("myBtn").style.color = settingDTxtpres;
-       
+
                if (schedule == 'A') {
                   document.getElementById("buttonB").style.backgroundColor = radioExtra;//asdfasdfasdf
                  document.getElementById("buttonC").style.backgroundColor = radioExtra;//asdfasdfasdf
@@ -1391,7 +1401,7 @@ for (var i = 0; i < advancedStatTextColor.length; i++) {
                    }
                  }
                }
-  
+
                     if (schedule == 'A') {
                       document.getElementById("buttonA").style.backgroundColor = scheduleSelectColor;//asdfasdfasdf
                    } else {
@@ -1400,14 +1410,14 @@ for (var i = 0; i < advancedStatTextColor.length; i++) {
                      } else {
                        if (schedule =='C') {
                           document.getElementById("buttonC").style.backgroundColor = scheduleSelectColor;//asdfasdfasdf
-                       } else { 
+                       } else {
                          if (schedule == 'D') {
                           document.getElementById("buttonD").style.backgroundColor = scheduleSelectColor;//asdfasdfasdf
                          }
                        }
                      }
                    }
-              
+
 }
 
 
@@ -1482,38 +1492,38 @@ var radioColor = 'white';
    function colorUpdate1() {
      if (element == 'background') {  //BACKGROUND
     document.body.style.backgroundColor = hex1;
-       
+
     localStorage.setItem("customBackgroundColor", hex1);
-       
+
          var statBack = document.getElementsByClassName("stat");
-       
+
               for (var i = 0; i < statBack.length; i++) {
             statBack[i].style.backgroundColor = hex1;
               }
-         
-       
-       
-       
+
+
+
+
      } else {
        if (element == 'accent') {   //ACCENT
           document.getElementById("endText").style.color = hex1;
           document.getElementById("time").style.color = hex1;
-          
+
           document.getElementById("title").style.color = hex1;
           document.getElementById("myprogressBar").style.backgroundColor = hex1;
-         
+
           localStorage.setItem("customAccentColor", hex1);
-         
-         
+
+
           var accentStat = document.getElementsByClassName("timeValueAdvanced");
-       
+
               for (var i = 0; i < accentStat.length; i++) {
             accentStat[i].style.color = hex1;
               }
-         
-         
+
+
          // alert(hex1);
-         
+
        } else {
          if (element == 'text') { //TEXT
             document.getElementById("firstEndText").style.color = hex1; //time text
@@ -1533,49 +1543,49 @@ var radioColor = 'white';
             document.getElementById("sixthEnd").style.color = hex1;
             document.getElementById("seventhEnd").style.color = hex1;
             document.getElementById("eighthEnd").style.color = hex1;
-    
+
             document.getElementById("like").style.color = hex1;
 
             document.getElementById("copy").style.color = hex1;
             document.getElementById("versionNumber").style.color = hex1;
             document.getElementById("myName").style.color = hex1;
-           
+
             localStorage.setItem("customTextColor", hex1);
-           
+
             var stat = document.getElementsByClassName("stat");
-       
+
               for (var i = 0; i < stat.length; i++) {
             stat[i].style.color = hex1;
               }
-           
+
          } else {
            if (element == 'sidebar') { //SIDEBAR
                 document.getElementById("dayContainer").style.backgroundColor = hex1;
                 document.getElementById("yearContainer").style.backgroundColor = hex1;
               document.getElementById("advancedStats").style.backgroundColor = hex1;
-             
+
              localStorage.setItem("customSidebarColor", hex1);
            } else {
              if (element == 'sidebarTxt') {
                    document.getElementById("schoolScheduleTxt").style.color = hex1;
                    document.getElementById("tabTxt").style.color = hex1;
-                   
+
                    document.getElementById("daySelectTxt").style.color = hex1;
                    document.getElementById("daySelectTxt2").style.color = hex1;
                    document.getElementById("daySelectTxt3").style.color = hex1;
                    document.getElementById("daySelectTxt4").style.color = hex1;
-               
+
                document.getElementById("Adiv").style.backgroundColor = hex1;
                document.getElementById("Bdiv").style.backgroundColor = hex1;
                document.getElementById("Cdiv").style.backgroundColor = hex1;
                document.getElementById("Ddiv").style.backgroundColor = hex1;
-               
+
                 document.getElementById("progressPercent").style.color = hex1;
-               
+
                localStorage.setItem("customSidebarTextColor", hex1);
 
                radioColor = hex1;
-               
+
                if (schedule == 'A') {
                   document.getElementById("buttonB").style.backgroundColor = hex1;//asdfasdfasdf
                  document.getElementById("buttonC").style.backgroundColor = hex1;//asdfasdfasdf
@@ -1606,27 +1616,27 @@ var radioColor = 'white';
                   // document.getElementById("video").style.color = hex1;
                    document.getElementById("myBtn").style.color = hex1;
                    document.getElementById("feature").style.color = hex1;
-                 
+
                 //   document.getElementById("moreStats").style.color = hex1;
-                 
+
                    document.getElementById("middleTimer").style.color = hex1;
-                 
+
                    localStorage.setItem("customButtonTextColor", hex1);
                } else {
                  if (element == 'settingD') {
-                   
+
                     localStorage.setItem("customSettingDisabledColor", hex1);
-                   
+
                      document.getElementById("feature").style.backgroundColor = hex1;
-                   
+
                   // document.getElementById("moreStats").style.backgroundColor = hex1;
-                   
+
                    document.getElementById("middleTimer").style.backgroundColor = hex1;
                    document.getElementById("myBtn").style.backgroundColor = hex1;
                     document.getElementById("Progress_Status").style.backgroundColor = hex1;//asdfasdfasdf
-                   
+
                      scheduleSelectColor = hex1;
-                   
+
                    if (schedule == 'A') {
                       document.getElementById("buttonA").style.backgroundColor = hex1;//asdfasdfasdf
                    } else {
@@ -1635,7 +1645,7 @@ var radioColor = 'white';
                      } else {
                        if (schedule =='C') {
                           document.getElementById("buttonC").style.backgroundColor = hex1;//asdfasdfasdf
-                       } else { 
+                       } else {
                          if (schedule == 'D') {
                           document.getElementById("buttonD").style.backgroundColor = hex1;//asdfasdfasdf
                          }
@@ -1644,30 +1654,30 @@ var radioColor = 'white';
                    }
                    Dsidebar = hex1;
                    buttonColorChange();
-                   
+
                  } else {
                    if (element == 'settingE') {
                      localStorage.setItem("customSettingEnabledColor", hex1);
                      Asidebar = hex1;
                      buttonColorChange();
-               
+
                    } else {
                      if (element =='settingETxt') {
                        localStorage.setItem("customSettingEnabledTextColor", hex1);
                        settingTxtE = hex1;
-                       
+
                        buttonTxtColorChange();
                      } else {
                        if (element == 'settingDTxt') {
                          localStorage.setItem("customSettingDisabledTextColor", hex1);
                          settingTxtD = hex1;
-                    
+
                          document.getElementById("myBtn").style.color = hex1;
                           document.getElementById("feature").style.color = hex1;
                           //document.getElementById("moreStats").style.color = hex1;
                           document.getElementById("middleTimer").style.color = hex1;
                          buttonTxtColorChange();
-                         
+
                        }
                      }
                    }
@@ -1685,8 +1695,8 @@ var settingTxtD = 'white';
 
 function buttonTxtColorChange() {
 
-  
-  
+
+
   if (tabControl == 'off') {
         document.getElementById("tabTitleButton").style.color = settingTxtE;
   } else {
@@ -1705,13 +1715,13 @@ function buttonColorChange () {
   }  else {
     document.getElementById("tabTitleButton").style.backgroundColor = Dsidebar;
   }
-  
+
   if (lunchMode == 'on') {
     document.getElementById("lunchModebutton").style.backgroundColor = Asidebar;
   } else {
     document.getElementById("lunchModebutton").style.backgroundColor = Dsidebar;
   }
-  
+
 }
   function tabSwitch() {
           var xhr = new XMLHttpRequest();
@@ -1720,26 +1730,26 @@ xhr.open("POST", myURL, true);
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.send(JSON.stringify({
     value: "value"
-})); 
-    
-    
-    
+}));
+
+
+
     var checkBox = document.getElementById("togglePoint2");
     if (setTabState == 0) {
      setTabState = 1;
      tabControl = 'off';
       document.getElementById("tabTitleButton").style.backgroundColor = Asidebar;
       document.getElementById("tabTitleButton").style.color = settingTxtE;
-      
+
       document.getElementById("alertText").innerHTML = "Tab Title Enabled";
-      
+
         opp = 1;
         document.getElementById("alertOverlay").style.opacity = opp;
        setTimeout(function (){
 
   fadeOutEffect();
 
-}, 1000); 
+}, 1000);
 
     }
     else
@@ -1748,17 +1758,17 @@ xhr.send(JSON.stringify({
      tabControl = 'on';
       document.getElementById("tabTitleButton").style.backgroundColor = Dsidebar;
       document.getElementById("tabTitleButton").style.color = settingTxtD;
-     
+
       document.getElementById("alertText").innerHTML = "Tab Title Disabled";
        document.getElementById("alertOverlay").style.opacity = 1;
          setTimeout(function (){
 
   fadeOutEffect();
 
-}, 1000); 
-      
+}, 1000);
+
     }
-} 
+}
 
 var check = function(){
     if(1 == 0){
@@ -1774,25 +1784,25 @@ var check = function(){
 
   }
       var daysOfSchool = 284;
-  
-  var daysWith;
-  
 
-   var width = 1; 
+  var daysWith;
+
+
+   var width = 1;
 
 var x = setInterval(function() {
 
-    var element = document.getElementById("myprogressBar");  
+    var element = document.getElementById("myprogressBar");
 
   var countDownDate = new Date("Jun 12, 2020 15:37:25").getTime();
-  
-  
+
+
   // Get today's date and time
   var now = new Date().getTime();
-    
+
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
-    
+
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -1800,17 +1810,17 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   //document.getElementById("untilSummerBreak").innerHTML = days + " " + "Days";
-  
+
   daysWith = days / daysOfSchool;
-  
+
   daysWith = 1 - daysWith;
-  
+
   daysWith = daysWith * 100;
-  
+
    daysWith = daysWith.toFixed(1);
-  
-   element.style.width = daysWith + '%';  
-  document.getElementById("progressPercent").innerHTML = daysWith + '%';  
+
+   element.style.width = daysWith + '%';
+  document.getElementById("progressPercent").innerHTML = daysWith + '%';
 
 }, 1);
 
@@ -1828,12 +1838,12 @@ function setPresetValDefault() {
     settingDTxtpres = 'white';
     settingEpres = '#626978';
     settingETxtpres = 'white';
-    
+
     radioDiv = 'white';
-      
+
     radioColor = 'white';
     radioExtra = radioColor;
-    scheduleSelectColor = '#40444F';  
+    scheduleSelectColor = '#40444F';
 }
 
 function setPresetValLight() {
@@ -1847,9 +1857,9 @@ function setPresetValLight() {
     settingDTxtpres = 'black';
     settingEpres = '#bdbdbd';
     settingETxtpres = 'black';
-    
+
     radioDiv = 'white';
-      
+
     radioColor = 'white';
     radioExtra = radioColor;
     scheduleSelectColor = 'black';
@@ -1866,9 +1876,9 @@ function setPresetValStealth() {
     settingDTxtpres = '#242424';
     settingEpres = '#242424';
     settingETxtpres = '#000000';
-      
+
     radioDiv = '242424';
-      
+
     radioColor = sidebarTxt;
     radioExtra = radioColor;
     scheduleSelectColor = '#303030';
@@ -1885,12 +1895,12 @@ function setPresetValBlue() {
     settingDTxtpres = 'white';
     settingEpres = '#15223d';
     settingETxtpres = 'white';
-    
+
     radioDiv = 'white';
-      
+
     radioColor = 'white';
     radioExtra = radioColor;
-    scheduleSelectColor = '#40444F';  
+    scheduleSelectColor = '#40444F';
 }
 
 function setPresetValYellow() {
@@ -1904,12 +1914,12 @@ function setPresetValYellow() {
     settingDTxtpres = 'white';
     settingEpres = '#626978';
     settingETxtpres = 'white';
-    
+
     radioDiv = 'white';
-      
+
     radioColor = 'white';
     radioExtra = radioColor;
-    scheduleSelectColor = '#40444F';  
+    scheduleSelectColor = '#40444F';
 }
 function setPresetValGreen() {
     background = '#212424'
@@ -1922,12 +1932,12 @@ function setPresetValGreen() {
     settingDTxtpres = 'white';
     settingEpres = '#626978';
     settingETxtpres = 'white';
-    
+
     radioDiv = 'white';
-      
+
     radioColor = 'white';
     radioExtra = radioColor;
-    scheduleSelectColor = '#40444F';  
+    scheduleSelectColor = '#40444F';
 }
 
 function setPresetValAqua() {
@@ -1941,12 +1951,12 @@ function setPresetValAqua() {
     settingDTxtpres = 'white';
     settingEpres = '#626978';
     settingETxtpres = 'white';
-    
+
     radioDiv = 'white';
-      
+
     radioColor = 'white';
     radioExtra = radioColor;
-    scheduleSelectColor = '#40444F';  
+    scheduleSelectColor = '#40444F';
 }
 
 function setPresetValBluePink() {
@@ -1960,12 +1970,12 @@ function setPresetValBluePink() {
     settingDTxtpres = 'white';
     settingEpres = '#626978';
     settingETxtpres = 'white';
-    
+
     radioDiv = 'white';
-      
+
     radioColor = 'white';
     radioExtra = radioColor;
-    scheduleSelectColor = '#40444F';  
+    scheduleSelectColor = '#40444F';
 }
 
 function setPresetValCool() {
@@ -1979,12 +1989,12 @@ function setPresetValCool() {
     settingDTxtpres = 'white';
     settingEpres = '#626978';
     settingETxtpres = 'white';
-    
+
     radioDiv = 'white';
-      
+
     radioColor = 'white';
     radioExtra = radioColor;
-    scheduleSelectColor = '#40444F';  
+    scheduleSelectColor = '#40444F';
 }
 
 function setPresetValNeutral() {
@@ -1998,12 +2008,12 @@ function setPresetValNeutral() {
     settingDTxtpres = 'white';
     settingEpres = '#626978';
     settingETxtpres = 'white';
-    
+
     radioDiv = 'white';
-      
+
     radioColor = 'white';
     radioExtra = radioColor;
-    scheduleSelectColor = '#40444F';  
+    scheduleSelectColor = '#40444F';
 }
 
 function setPresetValTerrible() {
@@ -2017,12 +2027,12 @@ function setPresetValTerrible() {
     settingDTxtpres = 'white';
     settingEpres = '#FFA200';
     settingETxtpres = 'white';
-    
+
     radioDiv = 'white';
-      
+
     radioColor = 'white';
     radioExtra = radioColor;
-    scheduleSelectColor = '#40444F';  
+    scheduleSelectColor = '#40444F';
 }
 
 
