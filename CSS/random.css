@@ -32,7 +32,7 @@ canvas {
 }
 
 #customSurvey {
-   
+
 
   z-index: 1000;
   position:relative;
@@ -59,7 +59,7 @@ canvas {
 #myprogressBar {
   width: 2%;
   height: 20px;
-  background-color: #1CFF77;
+  background-color: #FF1C3E;
   float: left;
 }
 
@@ -310,7 +310,7 @@ canvas {
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.3s ease-in-out;
-  
+
 }
 
 #getDate:hover {
@@ -332,7 +332,7 @@ canvas {
   line-height:1.5vh;
   margin-top: 10px;
   margin-bottom:10px;
-  
+
 }
 
 #endYearTxt:hover {
