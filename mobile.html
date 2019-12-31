@@ -19,13 +19,13 @@
     </script>
     <title>Mobile School Timer</title>
   </head>
-  <body onload="defineTiming(); Bpressed();">
+  <body onload="defineTiming(); Apressed();">
     
     <h1>
       School Timer Mobile
     </h1>
     <h2>
-      Made by Luke Gutman 2019
+      Made by Luke Gutman 2020
     </h2>
     
     <p class="periods" id="period1">1|</p> <p class="time" id="time1"></p> <br>
@@ -38,18 +38,16 @@
     <p class="periods" id="period8">8|</p> <p class="time" id="time8"></p> <br>
     <p class="periods" id="period9">9|</p> <p class="time" id="time9"></p> <br>
     
-    
+    <!--
     <button class="checkButton ConSchedule" id="conSchedule" onclick="concert()">
       12/20 Schedule Times
     </button>
-    
+    -->
     
     <p id="schedule">
       Schedule
     </p>
-    <h2 id="message">
-      Schedule B is adjusted for 12/20
-    </h2>
+    
     
      <button class="checkButton Abutton" id="Abutton" onclick="Apressed();">A</button>
      <button class="checkButton Bbutton" id="Bbutton" onclick="Bpressed();">B</button>
@@ -148,15 +146,7 @@ function defineTiming() {   //sets the variables of each period end time based o
       h8 = 14; m8 = 6;
       h9 = 14; m9 = 53;
       
-        h1 = 10;  m1 = 4;
-        h2 = 10;  m2 = 38;
-        h3 = 11; m3 = 12;
-        h4 = 11; m4 = 46;
-        h5 = 12; m5 = 20;
-        h6 = 12; m6 = 54;
-        h7 = 13; m7 = 28;
-        h8 = 14; m8 = 12;
-        he = 14; me = 53;
+        
     } else {
       if (schedule == 'C') {
         h1 = 8;  m1 = 22;
