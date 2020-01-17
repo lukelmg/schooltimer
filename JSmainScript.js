@@ -2,7 +2,7 @@
 
 function schooltimer() {
   hasLoadBefore();
-  Bpressed();   //change to change schedule
+  Apressed();   //change to change schedule
   confet();
 }
 

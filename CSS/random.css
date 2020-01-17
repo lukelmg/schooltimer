@@ -1,8 +1,16 @@
+#midtermLink {
+  color:white;
+  margin: 20px 20px 20px 20px;
+  
+}
+
 #like {
   float:right;
+  float:bottom;
   marign-right: 1vw;
   padding-right: 1vw;
   color:white;
+  margin-top: 91vh;
 }
 
 canvas {
@@ -53,7 +61,7 @@ canvas {
   background-color: #40444F;
   height: 20px;
   display: inline-block;
-  margin-top: 0px;
+  margin-top: -10px;
 }
 
 #myprogressBar {
