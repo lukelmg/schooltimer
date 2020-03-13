@@ -1,5 +1,9 @@
 <html>
   <head>
+        <meta name="description" content="This is a Timer for School meant for students to be able to know when each class ends. ">
+    <meta name="keywords" content="Timer,School,School Timer,Timer School,Timer for School,School Schedule,Timer Schedule,Stopwatch,Stopwatch School,schooltimer,schooltimers,stopwatch for school,school stopwatch,schedule, school schedule">
+        <meta name="description" content="This is a Timer for School meant for students to be able to know when each class ends. ">
+    <meta name="keywords" content="Timer,School,School Timer,Timer School,Timer for School,School Schedule,Timer Schedule,Stopwatch,Stopwatch School,schooltimer,schooltimers,stopwatch for school,school stopwatch,schedule, school schedule">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140137723-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -18,9 +22,10 @@
 </script>
     <title>School Timer</title>
     <meta http-equiv="refresh" content="1800">
-   <meta name="description" content="SchoolTimer is a website that lets students know exactly when each of their classes ends. Right now SchoolTimer only supports a few schools but we will be exanding very shortly. ">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
+    <meta name="description" content="This is a Timer for School meant for students to be able to know when each class ends. ">
     <meta name="keywords" content="Timer,School,School Timer,Timer School,Timer for School,School Schedule,Timer Schedule,Stopwatch,Stopwatch School,schooltimer,schooltimers,stopwatch for school,school stopwatch,schedule, school schedule">
-    <meta name="og:title" property="og:title" content="School Timer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn.glitch.com/b41ac94d-c334-488c-802a-1b6b7a8c75e8%2Fclock_fUV_icon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100&display=swap" rel="stylesheet">
@@ -43,10 +48,7 @@
     <link rel="stylesheet" href="CSS/selector.css">
     <link rel="stylesheet" href="CSS/animatedButtons.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
   </head>
-
-
    <!-- <audio id="click1" src="https://cdn.glitch.com/b41ac94d-c334-488c-802a-1b6b7a8c75e8%2FChicken-Clucking-Short-www.fesliyanstudios.com%20(1).mp3?v=1571405231239"></audio>
   <audio id="click2" src="https://cdn.glitch.com/b41ac94d-c334-488c-802a-1b6b7a8c75e8%2FChicken-Clucking-Short-www.fesliyanstudios.com%20(1).mp3?v=1571405231239"></audio> -->
   <audio id="click1" src="https://cdn.glitch.com/61df65a3-20ed-4ff0-abd8-cc39d4829321%2Fclick%203%20edited.wav?v=1569539649834"></audio>
@@ -59,9 +61,9 @@
 
       <div id="spinnerContainer">
 
-      <h1 id="schoolTimer">School Timer</h1><img src="https://cdn.glitch.com/b41ac94d-c334-488c-802a-1b6b7a8c75e8%2FRolling-1s-200px.gif?v=1568564175361" alt="loadthing" id="spinner" width="80" height="80">
-    </div>
-     <p id="loadCopy">Made by Luke Gutman, 2019 &nbsp &nbsp &nbsp</p>
+      <h1 id="schoolTimer">School Timer</h1>
+    </div><br><br><br><br>
+     <p id="loadCopy">Made by Luke Gutman, 2020 &nbsp &nbsp &nbsp</p>
 <center><div id="customSurvey">
      <button id="continueButton" onclick="loadSurvey();">
        Please Complete this One Time Survey to Continue
@@ -219,8 +221,6 @@
         </div>
     </div>
     <div id="like">
-      <br>
-      <a id="midtermLink" href="/midterms">SchoolTimer Midterm Schedule</a>
       
       <!-- PUT IMPORTANT MESSAGES HERE FOR EVERYONE TO SEE -->
 
@@ -249,6 +249,7 @@
   <br>
   <p id="thirdEndText"><b>Period 3 Ends In:&nbsp</b></p>
   <p id="thirdEnd"></p>
+      <button class="secret" id="secret" onclick="puzzle();"></button>
   <br>
   <p id="fourthEndText"><b>Period 4 Ends In:&nbsp</b></p>
   <p id="fourthEnd"></p>
@@ -268,10 +269,10 @@
   <p id="endText"><b>End of School In: &nbsp &nbsp</b></p>
   <p id="time"></p>
   <br>
-    <p onclick="notes();" id="versionNumber">Version 7.5 </p>
+    <p onclick="notes();" id="versionNumber">Version 7.6 </p>
     <p id="copy">Made by </p>
     <p id="myName">Luke Gutman, 2020 &nbsp</p>
-     <a id="copy" href="https://schooltimer.glitch.me/privacy-policy.html">Privacy Policy</a>
+     <a id="priv" href="https://schooltimer.glitch.me/privacy-policy.html">Privacy Policy</a>
         <button onclick="stuff();" id="feature" class="feature"><center>&#9432; More Stuff</center></button>
   <p id="title"></p>
   <center>

@@ -1,0 +1,19 @@
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140137723-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-140137723-1');
+
+  function promo(event) {
+  ga('send', 'event', {
+    eventCategory: 'Buttons',
+    eventAction: 'promo',
+    eventLabel: event.target.href
+  });
+}
+</script>
+</head>
+<img src="https://cdn.glitch.com/390502de-2af3-469c-b617-f038bf730a5f%2FScreenshot%202019-04-25%20at%2011.30.50%20AM.jpg?1556206556125" alt="msuic">

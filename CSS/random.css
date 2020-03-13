@@ -1,17 +1,21 @@
-#midtermLink {
-  color:white;
-  margin: 20px 20px 20px 20px;
-  
-}
-
 #like {
   float:right;
-  float:bottom;
   marign-right: 1vw;
   padding-right: 1vw;
   color:white;
-  margin-top: 91vh;
 }
+
+   #secret {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    padding: 32px 32px;
+    margin: 0px 50px;
+    float:right;
+  }  
 
 canvas {
   display: block;
@@ -318,6 +322,7 @@ canvas {
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.3s ease-in-out;
+  font-family: 'Play';
 
 }
 
@@ -340,6 +345,7 @@ canvas {
   line-height:1.5vh;
   margin-top: 10px;
   margin-bottom:10px;
+  font-family: 'Play';
 
 }
 
@@ -351,6 +357,14 @@ body {
   background-color: #101214;
 }
 #copy {
+  color: white;
+  font-size: 3vh;
+  font-family: Arial;
+  margin: 0px 0px;
+  display: inline-block;
+  margin-left: 5px;
+}
+#priv {
   color: white;
   font-size: 3vh;
   font-family: Arial;

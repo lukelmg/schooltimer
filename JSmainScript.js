@@ -3,7 +3,7 @@
 function schooltimer() {
   hasLoadBefore();
   Apressed();   //change to change schedule
-  confet();
+  
 }
 
 function refreshAt(hours, minutes, seconds) {
@@ -116,7 +116,6 @@ $(document).keydown(function(e){
       }
     }
 
-
   if  (developerMode == 'on'){
   if (e.which == 37) {
        rotation = rotation + 20;
@@ -187,7 +186,7 @@ function unloadQuick() {
   document.getElementById("loadingScreen").style.top = "0%";
   setTimeout(function() {
       clearLoad();
-}, 500);
+}, 200);
 
 }
 function clearLoad() {
@@ -707,7 +706,7 @@ function tick1() { //first Period
         document.getElementById('firstEnd').innerHTML = '';
         timeDetect1 = 0;
     } else {
-       document.getElementById("firstEndText").innerHTML = "Period 1 Ends In:" + "&nbsp";
+       document.getElementById("firstEndText").innerHTML = "Period 1 Ends In" + "&nbsp";
         document.getElementById('firstEnd').innerHTML = hh + ":" + mm + ":" + ss;
         schoolOver = 'no';
       timeDetect1 = 1;
@@ -731,7 +730,7 @@ function tick2() { //second Period
         document.getElementById('secondEnd').innerHTML = '';
       timeDetect2 = 1;
     } else {
-       document.getElementById("secondEndText").innerHTML = "Period 2 Ends In:" + "&nbsp";
+       document.getElementById("secondEndText").innerHTML = "Period 2 Ends In" + "&nbsp";
         document.getElementById('secondEnd').innerHTML =
             hh + ":" + mm + ":" + seconds;
       timeDetect2 = 0;
@@ -756,7 +755,7 @@ function tick3() { //third Period
         document.getElementById('thirdEnd').innerHTML = '';
       timeDetect3 = 0;
     } else {
-       document.getElementById("thirdEndText").innerHTML = "Period 3 Ends In:" + "&nbsp";
+       document.getElementById("thirdEndText").innerHTML = "Period 3 Ends In" + "&nbsp";
         document.getElementById('thirdEnd').innerHTML =
             hh + ":" + mm + ":" + seconds;
       timeDetect3 = 1;
@@ -793,9 +792,9 @@ function tick4() { //fourth Period
     setTheSchedule();
   }
   if (lunchMode == 'on') {
-   document.getElementById("fourthEndText").innerHTML = "Period 4 Lunch Ends In:" + "&nbsp";
+   document.getElementById("fourthEndText").innerHTML = "Period 4 Lunch Ends In" + "&nbsp";
  } else {
-    document.getElementById("fourthEndText").innerHTML = "Period 4 Ends In:" + "&nbsp";
+    document.getElementById("fourthEndText").innerHTML = "Period 4 Ends In" + "&nbsp";
   }
   if (hh <= 10) {
     document.getElementById('fourthEnd').innerHTML = hh + ":" + mm + ":" + seconds;
@@ -841,9 +840,9 @@ function tick5() { //fourth Period
     setTheSchedule();
   }
   if (lunchMode == 'on') {
-   document.getElementById("fifthEndText").innerHTML = "Period 5 Lunch Ends In:" + "&nbsp";
+   document.getElementById("fifthEndText").innerHTML = "Period 5 Lunch Ends In" + "&nbsp";
  } else {
-    document.getElementById("fifthEndText").innerHTML = "Period 5 Ends In:" + "&nbsp";
+    document.getElementById("fifthEndText").innerHTML = "Period 5 Ends In" + "&nbsp";
   }
   if (hh <= 10) {
     document.getElementById('fifthEnd').innerHTML = hh + ":" + mm + ":" + seconds;
@@ -892,9 +891,9 @@ function tick6() { //fourth Period
 		mm = mm - 3;
 	}
   if (lunchMode == 'on') {
-   document.getElementById("sixthEndText").innerHTML = "Period 6 Lunch Ends In:" + "&nbsp";
+   document.getElementById("sixthEndText").innerHTML = "Period 6 Lunch Ends In" + "&nbsp";
  } else {
-    document.getElementById("sixthEndText").innerHTML = "Period 6 Ends In:" + "&nbsp";
+    document.getElementById("sixthEndText").innerHTML = "Period 6 Ends In" + "&nbsp";
   }
   if (hh <= 10) {
     document.getElementById('sixthEnd').innerHTML = hh + ":" + mm + ":" + seconds;
@@ -943,9 +942,9 @@ function tick7() { //fourth Period
 		mm = mm - 3;
 	}
    if (lunchMode == 'on') {
-   document.getElementById("seventhEndText").innerHTML = "Period 7 Lunch Ends In:" + "&nbsp";
+   document.getElementById("seventhEndText").innerHTML = "Period 7 Lunch Ends In" + "&nbsp";
  } else {
-    document.getElementById("seventhEndText").innerHTML = "Period 7 Ends In:" + "&nbsp";
+    document.getElementById("seventhEndText").innerHTML = "Period 7 Ends In" + "&nbsp";
   }
   if (hh <= 10) {
     document.getElementById('seventhEnd').innerHTML = hh + ":" + mm + ":" + seconds;
@@ -963,6 +962,9 @@ function tick7() { //fourth Period
     timeDetect7 = 0;
   }
 }//period 7
+function puzzle() {
+  window.location.href = 'https://schooltimer.glitch.me/puzzle/lantern006.html'; 
+}
 function tick8() { //fourth Period
     var start = new Date;
     start.setHours(h8, m8, 0);
@@ -978,7 +980,7 @@ function tick8() { //fourth Period
         document.getElementById('eighthEnd').innerHTML = '';
         timeDetect8 = 0;
     } else {
-       document.getElementById("eighthEndText").innerHTML = "Period 8 Ends In:" + "&nbsp";
+       document.getElementById("eighthEndText").innerHTML = "Period 8 Ends In" + "&nbsp";
         document.getElementById('eighthEnd').innerHTML =
             hh + ":" + mm + ":" + seconds;
       timeDetect8 = 1;
@@ -1016,7 +1018,7 @@ function ticke() { //fourth Period
 
       timeDetecte = 0;
     } else {
-        document.getElementById('endText').innerHTML = "End of School In:" + "&nbsp";
+        document.getElementById('endText').innerHTML = "End of School In" + "&nbsp";
         document.getElementById('time').innerHTML =
             hh + ":" + mm + ":" + seconds;
        // document.title = hh + ":" + mm + ":" + seconds;
@@ -1052,7 +1054,7 @@ function untilThanks (){
 
   if (distance < 0) {
     clearInterval(untilThanks);
-    document.getElementById("untilThanks").innerHTML = "Have Started";
+    document.getElementById("untilThanks").innerHTML = "Have Ended";
   }
 }
 
@@ -1309,10 +1311,6 @@ for (var i = 0; i < advancedStatTextColor.length; i++) {
     stat[i].style.color = text;
 }
 
-
-
-//       document.getElementById("untilThanks").style.color = accent;
-
             document.getElementById("firstEndText").style.color = text; //time text
             document.getElementById("secondEndText").style.color = text;
             document.getElementById("thirdEndText").style.color = text;
@@ -1331,6 +1329,7 @@ for (var i = 0; i < advancedStatTextColor.length; i++) {
             document.getElementById("eighthEnd").style.color = text;
             document.getElementById("like").style.color = text;
             document.getElementById("copy").style.color = text;
+  document.getElementById("priv").style.color = text;
 
             document.getElementById("versionNumber").style.color = text;
             document.getElementById("myName").style.color = text;
@@ -1533,6 +1532,8 @@ var radioColor = 'white';
             document.getElementById("sixthEnd").style.color = hex1;
             document.getElementById("seventhEnd").style.color = hex1;
             document.getElementById("eighthEnd").style.color = hex1;
+           
+           document.getElementById("priv").style.color = hex1;
 
             document.getElementById("like").style.color = hex1;
 
@@ -1900,7 +1901,7 @@ function setPresetValYellow() {
     sidebar = '#000411';
     sidebarTxt = 'white';
     buttonTxtPres = 'white';
-    settingDpres = '#40444F';
+    settingDpres = '#212424';
     settingDTxtpres = 'white';
     settingEpres = '#626978';
     settingETxtpres = 'white';
@@ -1937,7 +1938,7 @@ function setPresetValAqua() {
     sidebar = '#1a1c1c';
     sidebarTxt = 'white';
     buttonTxtPres = 'white';
-    settingDpres = '#40444F';
+    settingDpres = '#212424';
     settingDTxtpres = 'white';
     settingEpres = '#626978';
     settingETxtpres = 'white';
@@ -2032,11 +2033,11 @@ function setPresetValTerrible() {
 let canvas = document.getElementById('confetti');
 
 canvas.width = 1920;
-canvas.height = 1500;
+canvas.height = 1080;
 
 let ctx = canvas.getContext('2d');
 let pieces = [];
-let numberOfPieces = 100;
+let numberOfPieces = 50;
 let lastUpdateTime = Date.now();
 
 function randomColor () {
@@ -2081,7 +2082,7 @@ function draw () {
         ctx.translate(p.x + p.size / 2, p.y + p.size / 2);
         ctx.rotate(p.rotation);
 
-        ctx.fillRect(5, 5, 5, 5);
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
 
         ctx.restore();
     });
@@ -2096,7 +2097,7 @@ function Piece (x, y) {
     this.gravity = (Math.random() * 0.5 + 0.75) * 0.3;
     this.rotation = (Math.PI * 2) * Math.random();
     this.rotationSpeed = (Math.PI * 2) * (Math.random() - 0.5) * 0.001;
-    this.color = "white";
+    this.color = randomColor();
 }
 
 while (pieces.length < numberOfPieces) {
@@ -2108,7 +2109,6 @@ update();
 draw();
   numberOfPieces = numberOfPieces*1.1;
   if (numberOfPieces > 1000) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
     location.reload();
   }
 }
@@ -2121,3 +2121,4 @@ function sleep(milliseconds) {
     }
   }
 }
+

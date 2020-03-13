@@ -17,6 +17,7 @@
   -o-transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.1s ease-in-out;
+    font-family: 'Play';
 }
 
 .tabtitleButton:hover {
@@ -42,6 +43,7 @@
   -o-transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.1s ease-in-out;
+    font-family: 'Play';
 }
 
 .lunchModeButton:hover {
@@ -51,6 +53,7 @@
 .buttons {
   margin: 10%;
   text-align: center;
+    font-family: 'Play';
 }
 .betaButton {
   padding: 0px 10px 0px 10px;
@@ -69,6 +72,7 @@
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.1s ease-in-out;
   background-color: #2B2F36;
+    font-family: 'Play';
 }
 
 .feature {
@@ -87,6 +91,7 @@
   background-color: #2B2F36;
   outline: 0 none;
   margin-left: 10px;
+    font-family: 'Play';
 }
 .feature:hover {
   transform: scale(1.1);
@@ -114,6 +119,7 @@
   transition: all 0.1s ease-in-out;
   background-color: #2B2F36;
   outline: 0 none;
+    font-family: 'Play';
 }
 
 .colorPicker:hover {
@@ -144,6 +150,7 @@
   transition: all 0.1s ease-in-out;
   background-color: #343536;
   outline: 0 none;
+    font-family: 'Play';
 }
 
 .moreStats:hover {
@@ -169,6 +176,7 @@
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.1s ease-in-out;
   background-color: #db3d3d;
+    font-family: 'Play';
 }
 .video {
   width: 175px;
@@ -187,6 +195,7 @@
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.1s ease-in-out;
   background-color: #db3d3d;
+    font-family: 'Play';
 }
 
 .button {
@@ -204,8 +213,17 @@
   font-weight: bold;
   font-family: Arial;
   float: right;
+    font-family: 'Play';
 }
 
 button:focus {
   outline: 0;
+}
+
+button {
+  font-family: 'Play';
+}
+
+p {
+  font-family: 'Play';
 }

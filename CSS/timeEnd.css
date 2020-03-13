@@ -1,37 +1,7 @@
-#endText {
-  color: #FF1C3E;
-  font-size: 8.5vh;
-  font-family: Arial;
-  margin: 0px 0px;
-  display: inline-block;
-  font-weight: bold;
-  margin-left: 5px;
-  transition: all 0.1s ease-in-out;
-  cursor: default;
-}
-#time {
-  color: #FF1C3E;
-  font-size: 8.5vh;
-  font-family: Arial;
-  margin: 0px 0px;
-  display: inline-block;
-  font-weight: bold;
-  margin-left: 5px;
-  transition: all 0.1s ease-in-out;
-  cursor: default;
-}
-
+#endText,
+#time,
 #firstEnd,
-#firstEndText {
-  color: white;
-  font-size: 8.5vh;
-  font-family: Arial;
-  margin: 0px 0px;
-  display: inline-block;
-  font-weight: bold;
-  margin-left: 5px;
-  cursor: default;
-}
+#firstEndText,
 #secondEnd,
 #secondEndText,
 #thirdEndText,
@@ -48,19 +18,26 @@
 #eighthEndText {
   color: white;
   font-size: 8.5vh;
-  font-family: Arial;
+   font-family: 'Play';
+  font-weight:bold;
   margin: 0px 0px;
   display: inline-block;
-  font-weight: bold;
   margin-left: 5px;
   cursor: default;
+  line-height: 10.5vh;
 }
 #title {
   color: #db3d3d;
   font-size: 30px;
-  font-family: Trebuchet MS;
-  font-weight: Bold;
+ font-family: 'Play';
+  font-weight:bold;
   float: right;
   top: -30;
   position: relative;
+    line-height: 10vh;
+}
+
+
+#time, #endText {
+  color:#FF1C3E;
 }
