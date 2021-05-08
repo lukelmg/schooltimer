@@ -10,7 +10,7 @@
   text-align: center;
   border: none;
   background-size: 300% 100%;
-  border-radius: 5px;
+  border-radius: 0px;
   background-color: #2B2F36;
    width:10vw;
   moz-transition: all 0.1s ease-in-out;
@@ -37,7 +37,7 @@
   text-align: center;
   border: none;
   background-size: 300% 100%;
-  border-radius: 5px;
+  border-radius: 0px;
   background-color: #2B2F36;
   moz-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
@@ -110,7 +110,7 @@
   text-align: center;
   border: none;
   background-size: 300% 100%;
-  border-radius: 5px;
+  border-radius: 0px;
   background-color: #2B2F36;
    width:10vw;
   moz-transition: all 0.1s ease-in-out;
@@ -141,7 +141,7 @@
   text-align: center;
   border: none;
   background-size: 300% 100%;
-  border-radius: 5px;
+  border-radius: 0px;
   background-color: #343536;
    width:10vw;
   moz-transition: all 0.1s ease-in-out;
@@ -209,7 +209,7 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 0px;
   font-weight: bold;
   font-family: Arial;
   float: right;

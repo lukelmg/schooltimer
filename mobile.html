@@ -129,15 +129,15 @@ var displayPeriod9;
 function defineTiming() {   //sets the variables of each period end time based on the schedule
   
   if (schedule == 'A') {
-    h1 = 8;  m1 = 29;
-    h2 = 9;  m2 = 17;
-    h3 = 10; m3 = 5;
-    h4 = 10; m4 = 53;
-    h5 = 11; m5 = 41;
-    h6 = 12; m6 = 29;
-    h7 = 13; m7 = 17;
-    h8 = 14; m8 = 5;
-    h9 = 14; m9 = 53;
+    h1 = 8;  m1 = 24; //initial variables for A mode
+ h2 = 9;  m2 =  9;
+ h3 =  9; m3 = 54;
+ h4 = 10; m4 = 39;
+ h5 = 11; m5 = 24;
+ h6 = 12; m6 =  9;
+ h7 = 12; m7 = 54;
+ h8 = 13; m8 = 44;
+ h9 = 14; m9 = 30;
   } else {
     if (schedule == 'B') {
       h1 = 8;  m1 = 37;
@@ -153,26 +153,26 @@ function defineTiming() {   //sets the variables of each period end time based o
         
     } else {
       if (schedule == 'C') {
-        h1 = 8;  m1 = 22;
-        h2 = 9;  m2 = 4;
-        h3 = 9;  m3 = 46;
-        h4 = 10; m4 = 20;
-        h5 = 10; m5 = 54;
-        h6 = 11; m6 = 28;
-        h7 = 12; m7 = 2;
-        h8 = 12; m8 = 31;
+        h1 = 8;  m1 = 12;
+        h2 = 8;  m2 = 48;
+        h3 = 9;  m3 = 24;
+        h4 = 10; m4 =  0;
+        h5 = 10; m5 = 36;
+        h6 = 11; m6 = 12;
+        h7 = 11; m7 = 48;
+        h8 = 12; m8 = 24;
         h9 = 13; m9 = 0;
       } else {
         if (schedule == 'D') {
-          h1 = 10; m1 = 9;
-          h2 = 10; m2 = 39;
-          h3 = 11; m3 = 9;
-          h4 = 11; m4 = 43;
-          h5 = 12; m5 = 17;
-          h6 = 12; m6 = 51;
-          h7 = 13; m7 = 25;
-          h8 = 14; m8 = 9;
-          h9 = 14; m9 = 53;
+          h1 = 10; m1 = 6;
+        h2 = 10; m2 = 36;
+        h3 = 11; m3 = 6;
+        h4 = 11; m4 = 42;
+        h5 = 12; m5 = 18;
+        h6 = 12; m6 = 54;
+        h7 = 13; m7 = 30;
+        h8 = 14; m8 = 0;
+        h9 = 14; m9 = 30;
         }
       }
     }

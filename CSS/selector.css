@@ -4,6 +4,7 @@ body {
   font-family: 'Play';
 }
 
+
 #values {
   color: #f1f1f1;
   font-size: 0px;
@@ -103,9 +104,9 @@ body {
   padding: 5px 20px;
   margin: 0px 0px 0px 0px;
   float: right;
-  -webkit-box-shadow: 0 0 10px 2px black;
+ /* -webkit-box-shadow: 0 0 10px 2px black;
   -moz-box-shadow: 0 0 10px 2px black;
-  box-shadow: 0 0 10px 2px black;
+  box-shadow: 0 0 10px 2px black; */
   marign-left:0px;
   display:block;
   z-index: 10000;

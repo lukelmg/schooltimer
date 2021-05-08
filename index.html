@@ -1,9 +1,9 @@
 <html>
   <head>
         <meta name="description" content="This is a Timer for School meant for students to be able to know when each class ends. ">
-    <meta name="keywords" content="Timer,School,School Timer,Timer School,Timer for School,School Schedule,Timer Schedule,Stopwatch,Stopwatch School,schooltimer,schooltimers,stopwatch for school,school stopwatch,schedule, school schedule">
+    <meta name="keywords" content="Timer,School,SchoolTimer,Timer School,Timer for School,School Schedule,Timer Schedule,Stopwatch,Stopwatch School,schooltimer,schooltimers,stopwatch for school,school stopwatch,schedule, school schedule">
         <meta name="description" content="This is a Timer for School meant for students to be able to know when each class ends. ">
-    <meta name="keywords" content="Timer,School,School Timer,Timer School,Timer for School,School Schedule,Timer Schedule,Stopwatch,Stopwatch School,schooltimer,schooltimers,stopwatch for school,school stopwatch,schedule, school schedule">
+    <meta name="keywords" content="Timer,School,SchoolTimer,Timer School,Timer for School,School Schedule,Timer Schedule,Stopwatch,Stopwatch School,schooltimer,schooltimers,stopwatch for school,school stopwatch,schedule, school schedule">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140137723-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -20,14 +20,15 @@
   });
 }
 </script>
-    <title>School Timer</title>
+    <title>SchoolTimer</title>
     <meta http-equiv="refresh" content="1800">
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
     <meta name="description" content="This is a Timer for School meant for students to be able to know when each class ends. ">
-    <meta name="keywords" content="Timer,School,School Timer,Timer School,Timer for School,School Schedule,Timer Schedule,Stopwatch,Stopwatch School,schooltimer,schooltimers,stopwatch for school,school stopwatch,schedule, school schedule">
+    <meta name="keywords" content="Timer,School,SchoolTimer,Timer School,Timer for School,School Schedule,Timer Schedule,Stopwatch,Stopwatch School,schooltimer,schooltimers,stopwatch for school,school stopwatch,schedule, school schedule">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://cdn.glitch.com/b41ac94d-c334-488c-802a-1b6b7a8c75e8%2Fclock_fUV_icon.ico">
+    <link rel="icon" href="https://cdn.glitch.com/390502de-2af3-469c-b617-f038bf730a5f%2Ffavicon.ico?v=1602008686653">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140137723-1"></script>
@@ -54,16 +55,39 @@
   <audio id="click1" src="https://cdn.glitch.com/61df65a3-20ed-4ff0-abd8-cc39d4829321%2Fclick%203%20edited.wav?v=1569539649834"></audio>
      <audio id="click2" src="https://cdn.glitch.com/61df65a3-20ed-4ff0-abd8-cc39d4829321%2Fclick%203%20edited.wav?v=1569539649834"></audio>
 
+<audio id="player">
+    <source src="https://cdn.glitch.com/390502de-2af3-469c-b617-f038bf730a5f%2FEarth%2C%20Wind%20%26%20Fire%20-%20September.mp3?v=1600730538784" type="audio/mp3">
+</audio>
 
-  <body onload="rememberPreset(); schooltimer(); mobile(); onloadtest(); checkToggle(); hasLoadBefore();" scroll="no" style="overflow: hidden">
+
+  <body onclick="september()" onload="rememberPreset(); schooltimer(); mobile(); onloadtest(); checkToggle(); hasLoadBefore();" scroll="no" style="overflow: hidden">
+    <div id="newVersionNotice">
+      <input id="exitMessage" type="button" value="X" onclick="exitMessage();">
+      <h2>
+        Hello Everyone,
+      </h2>
+      <p>
+        Alright so I've been working on a completely new version of SchoolTimer over the past few months but it is not ready yet (11,000+ lines of code!). Fear not, it is about
+        85% done and I am very excited to release it once it is complete. In the meantime, I have adjusted the timer for this year's weird scheduling
+        and I will keep everyone updated about the new verision.
+      </p>
+      
+      <p>
+        Luke Gutman
+      </p>
+      <br>
+      <input type="checkbox" onclick="dontShowAgain();">
+      <span>Do not show this message again</span>
+    </div>
+      <div id="daTimers">
+  
     <canvas id="confetti" style="width:90vw;height:90vh;"></canvas>
     <div id="loadingScreen">
-
       <div id="spinnerContainer">
 
-      <h1 id="schoolTimer">School Timer</h1>
+      <h1 id="schoolTimer">SchoolTimer</h1>
     </div><br><br><br><br>
-     <p id="loadCopy">Made by Luke Gutman, 2020 &nbsp &nbsp &nbsp</p>
+     <p id="loadCopy">Made by Luke Gutman, 2021 &nbsp &nbsp &nbsp</p>
 <center><div id="customSurvey">
      <button id="continueButton" onclick="loadSurvey();">
        Please Complete this One Time Survey to Continue
@@ -140,11 +164,11 @@
           <center>
             <div class="tooltipA">  <span class="tooltiptextA">Normal</span> <p id="daySelectTxt">A</p><button type="button" id="buttonA" class="checkButton buttonA" onclick="Apressed();"><center><div id="Adiv">&nbsp</div></center></button> </div>
           <br>
-            <div class="tooltip">  <span class="tooltiptext">Homeroom</span>  <p id="daySelectTxt2">B</p><button type="button" id="buttonB" class="checkButton buttonB" onclick="Bpressed();"><center><div id="Bdiv">&nbsp</div></center></button> </div>
+            <div class="tooltip">  <span class="tooltiptext">Wednesday Home Schedule</span>  <p id="daySelectTxt2">W</p><button type="button" id="buttonB" class="checkButton buttonB" onclick="Bpressed();"><center><div id="Bdiv">&nbsp</div></center></button> </div>
           <br>
             <div class="tooltip">  <span class="tooltiptext">Early Dismissal</span>   <p id="daySelectTxt3">C</p><button type="button" id="buttonC" class="checkButton buttonC" onclick="Cpressed();"><center><div id="Cdiv">&nbsp</div></center></button> </div>
          <br>
-            <div class="tooltip">  <span class="tooltiptext">2 Hour Delay</span>  <p id="daySelectTxt4">D</p><button type="button" id="buttonD" class="checkButton buttonD" onclick="Dpressed();"><center><div id="Ddiv">&nbsp</div></center></button> </div>
+            <div class="tooltip">  <span class="tooltiptext">"bruh are we even going to have 2 hour delays?" yes, yes we are</span>  <p id="daySelectTxt4">D</p><button type="button" id="buttonD" class="checkButton buttonD" onclick="Dpressed();"><center><div id="Ddiv">&nbsp</div></center></button> </div>
           <br>
           <p id="tabTxt"></p>
           <div class="tooltip">
@@ -163,7 +187,7 @@
 
           <br>
             <div class="tooltip">
-            <span class="tooltiptext">Customizable Colors/Themes for School Timer</span>
+            <span class="tooltiptext">Customizable Colors/Themes for SchoolTimer</span>
             <input type="button" class="colorPicker" value="Color Picker" id="myBtn" onclick="moveColor();">
             </div>
             <br>
@@ -191,16 +215,16 @@
     </div>
       <div id="advancedStats">
         <div class="stat">
-              <p class="likeText">Weekend Starts In </p><p class="timeValueAdvanced" id="untilWeekend"></p>
+              <p class="likeText">Pandemic Over In </p><p class="timeValueAdvanced" id="untilWeekend"></p>
         </div>
            <div class="stat">
-              <p class="likeText">2nd Quarter End</p><p class="timeValueAdvanced" id="until2Quarter">10d 10h 5m 10s</p>
+              <p class="likeText">1st Quarter End</p><p class="timeValueAdvanced" id="until2Quarter">10d 10h 5m 10s</p>
         </div>
            <div class="stat">
-              <p class="likeText">3rd Quarter End</p><p class="timeValueAdvanced" id="until3Quarter">10d 10h 5m 10s</p>
+              <p class="likeText">2nd Quarter End</p><p class="timeValueAdvanced" id="until3Quarter">10d 10h 5m 10s</p>
         </div>
            <div class="stat">
-              <p class="likeText">4th Quarter End </p><p class="timeValueAdvanced" id="until4Quarter">10d 10h 5m 10s</p>
+              <p class="likeText">3rd Quarter End </p><p class="timeValueAdvanced" id="until4Quarter">10d 10h 5m 10s</p>
         </div>
 
          <div class="stat">
@@ -217,7 +241,7 @@
         </div>
 
           <div class="stat">
-              <p class="likeText">Spring Break</p><p class="timeValueAdvanced" id="winterBreak">10d 10h 5m 10s</p>
+              <p class="likeText">Thanksgiving Break</p><p class="timeValueAdvanced" id="winterBreak">10d 10h 5m 10s</p>
         </div>
     </div>
     <div id="like">
@@ -240,7 +264,6 @@
 
     </div>
   </form>
-  <span id="result"></span>
   <p id="firstEndText"><b>Period 1 Ends In:&nbsp</b></p>
   <p id="firstEnd"></p>
   <br>
@@ -266,13 +289,15 @@
   <p id="eighthEndText"><b>Period 8 Ends In:&nbsp</b></p>
   <p id="eighthEnd"></p>
   <br>
-  <p id="endText"><b>End of School In: &nbsp &nbsp</b></p>
+  <p id="endText"><b>10th Period Begins In: &nbsp &nbsp</b></p>
   <p id="time"></p>
   <br>
-    <p onclick="notes();" id="versionNumber">Version 7.6 </p>
+    
+  
+    <p onclick="notes();" id="versionNumber">Version 7.8? </p>
     <p id="copy">Made by </p>
-    <p id="myName">Luke Gutman, 2020 &nbsp</p>
-     <a id="priv" href="https://schooltimer.glitch.me/privacy-policy.html">Privacy Policy</a>
+    <p id="myName">Luke Gutman, 2021 &nbsp</p>
+     <!--<a id="priv" href="https://schooltimer.glitch.me/privacy-policy.html">Privacy Policy</a> -->
         <button onclick="stuff();" id="feature" class="feature"><center>&#9432; More Stuff</center></button>
   <p id="title"></p>
   <center>
@@ -284,6 +309,7 @@
     </div>
     <div id="fade" onclick="lightbox_close();"></div>
   </center>
+              </div>
 </body>
 </html>
 <script src="JSmainScript.js"></script>

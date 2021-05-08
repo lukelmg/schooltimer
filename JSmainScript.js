@@ -2,9 +2,33 @@
 
 function schooltimer() {
   hasLoadBefore();
-  Apressed();   //change to change schedule
-  
+  var today = new Date().toLocaleString('en-us', {  weekday: 'long' });
+  if (today == "Wednesday") {
+    Apressed();
+  } else {
+    Apressed();
+  }
+
+  var displayMessageQuestionMark = localStorage.getItem('showMessageAgain');
+  if (displayMessageQuestionMark == true || displayMessageQuestionMark == null || displayMessageQuestionMark == undefined || displayMessageQuestionMark == "") {
+    exitMessage();
+  } else {
+     exitMessage();
+  }
 }
+
+function september() {
+  /*
+    var setp = document.getElementById("player");
+    setp.play();
+  */
+}
+
+function showMessage() {
+  document.getElementById("newVersionNotice").style.display = "block";
+  document.getElementById("daTimers").style.filter = "blur(5px)";
+}
+
 
 function refreshAt(hours, minutes, seconds) {
     var now = new Date();
@@ -31,6 +55,15 @@ function middleTimer() {
   window.location.href = 'https://middleschooltimer.glitch.me';
 }
 
+function exitMessage() {
+  document.getElementById("daTimers").style.filter = "none";
+  document.getElementById("newVersionNotice").style.display = "none";
+}
+
+function dontShowAgain() {
+  localStorage.setItem('showMessageAgain', false); 
+}
+
 
 var rotation = 0;
 var scale = 1;
@@ -44,7 +77,7 @@ var three = 0;
 
 function crazy() {
   alert("you've activated strobe light mode");
-   changeColor();
+  changeColor();
 }
 
 var delay = 0;
@@ -70,7 +103,6 @@ function changeColor() {
 
 $(document).keydown(function(e){
 
-
   if (e.which == 49) {
    one = one + 1;
   }
@@ -84,12 +116,6 @@ $(document).keydown(function(e){
     crazy();
   }
 
-
-
-
-
-
-
    if ((e.metaKey || e.ctrlKey) && (e.metaKey || e.shiftKey) && ( String.fromCharCode(e.which).toLowerCase() === 'l') ) {
      if (lunchMode == 'off') {
        lunchMode = 'on';
@@ -99,12 +125,6 @@ $(document).keydown(function(e){
        }
      }
    }
-
-
-
-
-
-
 
     if ((e.metaKey || e.ctrlKey) && ( String.fromCharCode(e.which).toLowerCase() === 'x') ) {
       if (developerMode = 'off'){
@@ -268,86 +288,22 @@ function moreStatsOut() {
 
 
 function weekendCalculate () {
-  var newHour = parseFloat(endHour);
-  var newMin = parseFloat(endMin);
-
-  var currentDateToday = new Date().getTime();
-  var dt = new Date(currentDateToday);
-
-  var newDt = String(dt);
-
-  var sunday = newDt.includes("Sun");
-  var monday = newDt.includes("Mon");
-  var tuesday = newDt.includes("Tue");
-  var wednesday = newDt.includes("Wed");
-  var thursday = newDt.includes("Thur");
-  var friday = newDt.includes("Fri");
-  var saturday = newDt.includes("Sat");
-
-  if (sunday == true) {
-    newHour = newHour + 120;
-  } else {
-    if (monday == true) {
-      newHour = newHour + 96;
-    } else {
-      if (tuesday == true) {
-        newHour = newHour + 72;
-      } else {
-        if (wednesday == true) {
-          newHour = newHour + 48;
-        } else {
-          if (thursday == true) {
-            newHour = newHour + 24;
-          } else {
-            if (friday == true) {
-              newHour = newHour + 0;
-            } else {
-              if (saturday == true) {
-                newHour = newHour + 144;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  newHour = newHour +24;
-
-  var days = newHour / 24;
-  days = Math.trunc(days);
-
-  var hourInDays = days * 24;
-
-  newHour = newHour - hourInDays
-
-  if (schoolOver == 'yes') {
-    newHour = newHour - 24;
-  }
-  if (newHour < 0) {
-  newHour = newHour * -1;
-    newHour = 24-newHour;
-  }
 
 
-  document.getElementById('untilWeekend').innerHTML = days + 'd ' + newHour + 'h ' + newMin + 'm ' + seconds + "s";
-  //document.getElementById('untilWeekend').innerHTML = "no joe";
+
+  document.getElementById('untilWeekend').innerHTML = "undefined";
+
 }
 
 
 
 
-//alert(sunday + "\n" + monday + "\n" + tuesday + "\n" + wednesday + "\n" + thursday + "\n" + friday + "\n" + saturday);
 
 
 
 
 
-
-
-
-
-var countDownDate = new Date("Jun 16, 2020 15:37:25").getTime();
+var countDownDate = new Date("Jun 16, 2021 15:37:25").getTime();
 
 var x = setInterval(function() {
 
@@ -506,15 +462,15 @@ var isSoundOn = 0;
     }
 }
 
-var h1 = 8;  var m1 = 29; //initial variables for A mode
-var h2 = 9;  var m2 = 17;
-var h3 = 10; var m3 = 5;
-var h4 = 10; var m4 = 53;
-var h5 = 11; var m5 = 41;
-var h6 = 12; var m6 = 29;
-var h7 = 13; var m7 = 17;
-var h8 = 14; var m8 = 5;
-var he = 14; var me = 53;
+var h1 = 8;  var m1 = 24; //initial variables for A mode
+var h2 = 9;  var m2 =  9;
+var h3 =  9; var m3 = 54;
+var h4 = 10; var m4 = 39;
+var h5 = 11; var m5 = 24;
+var h6 = 12; var m6 =  9;
+var h7 = 12; var m7 = 54;
+var h8 = 13; var m8 = 44;
+var he = 14; var me = 30;
 
 var seconds;
 var tabControl = 'on';
@@ -613,50 +569,51 @@ function setTheSchedule() {
 if (keyVar == 'off') {
   if (lunchMode == "off") {
     if (schedule == 'A') {
-
-        h1 = 8;  m1 = 29;
-        h2 = 9;  m2 = 17;
-        h3 = 10; m3 = 5;
-        h4 = 10; m4 = 53;
-        h5 = 11; m5 = 41;
-        h6 = 12; m6 = 29;
-        h7 = 13; m7 = 17;
-        h8 = 14; m8 = 5;
-        he = 14; me = 53;
+      
+      
+ h1 = 8;  m1 = 24; //initial variables for A mode
+ h2 = 9;  m2 =  9;
+ h3 =  9; m3 = 54;
+ h4 = 10; m4 = 39;
+ h5 = 11; m5 = 24;
+ h6 = 12; m6 =  9;
+ h7 = 12; m7 = 54;
+ h8 = 13; m8 = 44;
+ he = 14; me = 30;
 
     }
     if (schedule == 'B') {
-        h1 = 8;  m1 = 37;
-      h2 = 9;  m2 = 24;
-      h3 = 10; m3 = 11;
-      h4 = 10; m4 = 58;
-      h5 = 11; m5 = 45;
-      h6 = 12; m6 = 32;
-      h7 = 13; m7 = 19;
-      h8 = 14; m8 = 6;
-      h9 = 14; m9 = 53;
+      h1 = 9;  m1 = 47;
+      h2 = 10; m2 = 25;
+      h3 = 11; m3 =  3;
+      h4 = 11; m4 = 41;
+      h5 = 12; m5 = 19;
+      h6 = 12; m6 = 57;
+      h7 = 13; m7 = 35;
+      h8 = 14; m8 = 12;
+      he = 14; me = 50;
     }
     if (schedule == 'C') {
-        h1 = 8;  m1 = 22;
-        h2 = 9;  m2 = 4;
-        h3 = 9;  m3 = 46;
-        h4 = 10; m4 = 20;
-        h5 = 10; m5 = 54;
-        h6 = 11; m6 = 28;
-        h7 = 12; m7 = 2;
-        h8 = 12; m8 = 31;
+        h1 = 8;  m1 = 12;
+        h2 = 8;  m2 = 48;
+        h3 = 9;  m3 = 24;
+        h4 = 10; m4 =  0;
+        h5 = 10; m5 = 36;
+        h6 = 11; m6 = 12;
+        h7 = 11; m7 = 48;
+        h8 = 12; m8 = 24;
         he = 13; me = 0;
     }
     if (schedule == 'D') {
-        h1 = 10; m1 = 9;
-        h2 = 10; m2 = 39;
-        h3 = 11; m3 = 9;
-        h4 = 11; m4 = 43;
-        h5 = 12; m5 = 17;
-        h6 = 12; m6 = 51;
-        h7 = 13; m7 = 25;
-        h8 = 14; m8 = 9;
-        he = 14; me = 53;
+        h1 = 10; m1 = 6;
+        h2 = 10; m2 = 36;
+        h3 = 11; m3 = 6;
+        h4 = 11; m4 = 42;
+        h5 = 12; m5 = 18;
+        h6 = 12; m6 = 54;
+        h7 = 13; m7 = 30;
+        h8 = 14; m8 = 0;
+        he = 14; me = 30;
     }
   }
 }
@@ -1040,7 +997,7 @@ function untilThanks (){
   var newHour = parseFloat(endHour);
   var newMin = parseFloat(endMin);
 
-  var countDownDate = new Date("Jan 22, 2020 7:40:00").getTime();
+  var countDownDate = new Date("Jan 22, 2021 7:40:00").getTime();
 
   var now = new Date().getTime();
 
@@ -1063,7 +1020,7 @@ function quarter2 (){
   var newHour = parseFloat(endHour);
   var newMin = parseFloat(endMin);
 
-  var countDownDate = new Date("Jan 24, 2020 15:53:00").getTime();
+  var countDownDate = new Date("Nov 5, 2020 15:30:00").getTime();
 
   var now = new Date().getTime();
 
@@ -1077,7 +1034,7 @@ function quarter2 (){
 
   if (distance < 0) {
     clearInterval(quarter2);
-    document.getElementById("until2Quarter").innerHTML = "Quarter 2 Is Over";
+    document.getElementById("until2Quarter").innerHTML = "Quarter 1 Is Over";
   }
 }
 
@@ -1087,7 +1044,7 @@ function quarter3 (){
   var newHour = parseFloat(endHour);
   var newMin = parseFloat(endMin);
 
-  var countDownDate = new Date("Apr 2, 2020 15:53:00").getTime();
+  var countDownDate = new Date("Jan 22, 2021 15:30:00").getTime();
 
   var now = new Date().getTime();
 
@@ -1101,7 +1058,7 @@ function quarter3 (){
 
   if (distance < 0) {
     clearInterval(quarter2);
-    document.getElementById("until3Quarter").innerHTML = "Quarter 3 Is Over";
+    document.getElementById("until3Quarter").innerHTML = "Quarter 2 Is Over";
   }
 }
 
@@ -1112,7 +1069,7 @@ function quarter4 (){
   var newHour = parseFloat(endHour);
   var newMin = parseFloat(endMin);
 
-  var countDownDate = new Date("Jun 12, 2020 15:53:00").getTime();
+  var countDownDate = new Date("April 7, 2021 15:30:00").getTime();
 
   var now = new Date().getTime();
 
@@ -1126,7 +1083,7 @@ function quarter4 (){
 
   if (distance < 0) {
     clearInterval(quarter2);
-    document.getElementById("until4Quarter").innerHTML = "Quarter 4 Is Over";
+    document.getElementById("until4Quarter").innerHTML = "Quarter 3 Is Over";
   }
 }
 
@@ -1136,7 +1093,7 @@ function schoolEnd (){
   var newHour = parseFloat(endHour);
   var newMin = parseFloat(endMin);
 
-  var countDownDate = new Date("Jun 12, 2020 15:53:00").getTime();
+  var countDownDate = new Date("Jun 12, 2021 15:53:00").getTime();
 
   var now = new Date().getTime();
 
@@ -1159,7 +1116,7 @@ function seniorEnd (){
 
   var newHour = parseFloat(endHour);
 
-  var countDownDate = new Date("Jun 4, 2020 10:30:00").getTime();
+  var countDownDate = new Date("Jun 4, 2021 10:30:00").getTime();
 
   var now = new Date().getTime();
 
@@ -1168,7 +1125,9 @@ function seniorEnd (){
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
+  
+  newSec = seconds;
+  
   document.getElementById("seniorEnd").innerHTML = days + "d " + hours + "h "  + minutes + "m " + seconds + "s ";
 
   if (distance < 0) {
@@ -1177,12 +1136,14 @@ function seniorEnd (){
   }
 }
 
+var newSec;
+
 
 function winterBreak (){
 
   var newHour = parseFloat(endHour);
 
-  var countDownDate = new Date("April 9, 2020 14:53:00").getTime();
+  var countDownDate = new Date("Nov 26, 2020 14:30:00").getTime();
 
   var now = new Date().getTime();
 
@@ -1194,11 +1155,65 @@ function winterBreak (){
 
   days = days - 1;
 
-  document.getElementById("winterBreak").innerHTML = days + "d " + hours + "h "  + minutes + "m " + seconds + "s ";
+  document.getElementById("winterBreak").innerHTML = days + "d " + hours + "h "  + minutes + "m " + newSec + "s ";
 
   if (distance < 0) {
     clearInterval(quarter2);
     document.getElementById("winterBreak").innerHTML = "Has Started!";
+  }
+  
+  
+   var element = document.getElementById("myprogressBar");
+
+  var countDownDate = new Date("Jun 12, 2021 15:37:25").getTime();
+
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  //document.getElementById("untilSummerBreak").innerHTML = days + " " + "Days";
+
+  daysWith = days / daysOfSchool;
+
+  daysWith = 1 - daysWith;
+
+  daysWith = daysWith * 100;
+
+   daysWith = daysWith.toFixed(1);
+
+   element.style.width = daysWith + '%';
+  document.getElementById("progressPercent").innerHTML = daysWith + '%';
+  
+  getDateThingy();
+
+}
+
+function getDateThingy () {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  var weeks = days / 7;
+
+  weeks = Math.round(weeks);
+
+  document.getElementById("getDate").innerHTML = weeks
+
+  if (distance < 0) {
+    clearInterval(x);
+      document.getElementById("getDate").innerHTML = "0"
   }
 }
 
@@ -1329,7 +1344,7 @@ for (var i = 0; i < advancedStatTextColor.length; i++) {
             document.getElementById("eighthEnd").style.color = text;
             document.getElementById("like").style.color = text;
             document.getElementById("copy").style.color = text;
-  document.getElementById("priv").style.color = text;
+  //document.getElementById("priv").style.color = text;
 
             document.getElementById("versionNumber").style.color = text;
             document.getElementById("myName").style.color = text;
@@ -1533,7 +1548,7 @@ var radioColor = 'white';
             document.getElementById("seventhEnd").style.color = hex1;
             document.getElementById("eighthEnd").style.color = hex1;
            
-           document.getElementById("priv").style.color = hex1;
+           //document.getElementById("priv").style.color = hex1;
 
             document.getElementById("like").style.color = hex1;
 
@@ -1762,30 +1777,29 @@ xhr.send(JSON.stringify({
 }
 
 var check = function(){
-    if(1 == 0){
-        // run when condition is met
-    }
-    else {
+
         setTimeout(check, 1000); // check again in a second
-    }
+
 }
 
   function notes() {
   window.location.href = 'https://schooltimer.glitch.me/releasenotes.html';
 
   }
-      var daysOfSchool = 284;
+      var daysOfSchool = 285;
 
   var daysWith;
 
 
    var width = 1;
 
+
+
 var x = setInterval(function() {
 
     var element = document.getElementById("myprogressBar");
 
-  var countDownDate = new Date("Jun 12, 2020 15:37:25").getTime();
+  var countDownDate = new Date("Jun 12, 2021 15:37:25").getTime();
 
 
   // Get today's date and time
@@ -1807,7 +1821,7 @@ var x = setInterval(function() {
   daysWith = 1 - daysWith;
 
   daysWith = daysWith * 100;
-
+  
    daysWith = daysWith.toFixed(1);
 
    element.style.width = daysWith + '%';
@@ -1816,13 +1830,14 @@ var x = setInterval(function() {
 }, 1);
 
 
+
 //stay at bottom!!!!!!
 
 function setPresetValDefault() {
-    background = '#101214'
-    accent = '#FF1C3E';
+    background = '#292929'
+    accent = '#ff2638';
     text = 'white';
-    sidebar = '#202124'
+    sidebar = '#242424'
     sidebarTxt = 'white';
     buttonTxtPres = 'white';
     settingDpres = '#2B2F36';
